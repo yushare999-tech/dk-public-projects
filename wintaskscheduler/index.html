@@ -45,9 +45,9 @@
         프린터 헤드 막힘 방지 및 노즐 유지보수를 완전 자동화합니다.
       </p>
       <div class="cta-group">
-        <a href="releases/WinPrintTaskScheduler_v1.0.0.zip" class="btn btn-primary" id="btn-download-zip">
+        <button class="btn btn-primary" id="btn-download-zip" onclick="openDownloadModal()">
           📦 v1.0.0 압축 패키지 다운로드 (.zip)
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -191,13 +191,56 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2026 WinPrintTaskScheduler · <a href="../">DK's Project Hub</a> · by <a
-          href="https://github.com/yushare999-tech" target="_blank">yushare999-tech</a></p>
+  <!-- Download Modal -->
+  <div id="downloadModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>🛡️ 다운로드 및 설치 안내 (SmartScreen 안내)</h3>
+        <button class="modal-close" onclick="closeDownloadModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-notice">
+          <strong>안내:</strong> 코드 서명 인증서가 없는 독립 실행형 유틸리티 특성상, 인터넷 다운로드 시 Windows 보안(SmartScreen) 경고창이 최초 1회 표시될 수 있습니다. <b>이는 정상적인 보안 동작이며 프로그램은 안전합니다.</b>
+        </p>
+
+        <div class="smartscreen-steps">
+          <h4>💡 최초 실행 시 SmartScreen 경고 대처 방법 (딱 1번만 클릭)</h4>
+          <div class="step-guide">
+            <div class="guide-box">
+              <span class="step-badge">STEP 1</span>
+              <p>파란색 <strong>Windows의 PC 보호</strong> 창이 뜨면 <code>[추가 정보]</code> 텍스트를 클릭합니다.</p>
+            </div>
+            <div class="guide-box">
+              <span class="step-badge">STEP 2</span>
+              <p>하단에 새로 나타나는 <code>[실행]</code> 버튼을 클릭합니다.</p>
+            </div>
+          </div>
+          <p class="step-note">※ 스케줄러 등록 후 백그라운드 자동 인쇄 시에는 경고 창이 <strong>절대 발생하지 않습니다.</strong></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeDownloadModal()">취소</button>
+        <button class="btn btn-primary" onclick="confirmDownload()">✅ 안내 확인 및 다운로드 시작 (.zip)</button>
+      </div>
     </div>
-  </footer>
+  </div>
+
+  <script>
+    function openDownloadModal() {
+      document.getElementById('downloadModal').classList.add('active');
+    }
+    function closeDownloadModal() {
+      document.getElementById('downloadModal').classList.remove('active');
+    }
+    function confirmDownload() {
+      closeDownloadModal();
+      window.location.href = 'releases/WinPrintTaskScheduler_v1.0.0.zip';
+    }
+    // Backdrop click to close
+    document.getElementById('downloadModal').addEventListener('click', function(e) {
+      if (e.target === this) closeDownloadModal();
+    });
+  </script>
 
 </body>
 

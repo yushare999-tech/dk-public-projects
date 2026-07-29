@@ -216,3 +216,144 @@ footer a { color: var(--accent-primary); text-decoration: none; }
 .callout-body code { background: rgba(0,210,255,0.08); color: var(--accent-primary); padding: 1px 5px; border-radius: 4px; font-size: 0.78rem; }
 
 @media (max-width: 900px) { .preview-wrapper { grid-template-columns: 1fr; } }
+
+/* ── MODAL STYLES ── */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 14, 23, 0.82);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-md);
+  max-width: 540px;
+  width: 100%;
+  box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 210, 255, 0.15);
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-header {
+  padding: 20px 24px;
+  background: rgba(0, 210, 255, 0.05);
+  border-bottom: 1px solid var(--border-color);
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.modal-header h3 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.modal-close {
+  background: none; border: none;
+  font-size: 1.5rem; color: var(--text-muted);
+  cursor: pointer; padding: 0 4px; line-height: 1;
+  transition: color 0.2s;
+}
+.modal-close:hover { color: var(--accent-primary); }
+
+.modal-body {
+  padding: 24px;
+}
+
+.modal-notice {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  background: rgba(255, 189, 46, 0.08);
+  border: 1px solid rgba(255, 189, 46, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+.modal-notice strong { color: #ffbd2e; }
+
+.smartscreen-steps {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+}
+
+.smartscreen-steps h4 {
+  font-size: 0.92rem;
+  color: var(--accent-primary);
+  margin-bottom: 14px;
+}
+
+.step-guide {
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.guide-box {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--bg-card);
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.step-badge {
+  background: rgba(0, 210, 255, 0.15);
+  color: var(--accent-primary);
+  font-size: 0.75rem; font-weight: 700;
+  padding: 3px 8px; border-radius: 4px;
+  flex-shrink: 0; margin-top: 2px;
+}
+
+.guide-box p {
+  font-size: 0.84rem; color: var(--text-main); margin: 0; line-height: 1.5;
+}
+
+.guide-box code {
+  background: rgba(0, 210, 255, 0.12);
+  color: var(--accent-primary);
+  padding: 1px 6px; border-radius: 4px; font-weight: 600;
+}
+
+.step-note {
+  font-size: 0.78rem;
+  color: var(--accent-secondary);
+  margin-top: 12px; margin-bottom: 0;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  background: rgba(0,0,0,0.2);
+  border-top: 1px solid var(--border-color);
+  display: flex; justify-content: flex-end; gap: 12px;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.08);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 10px 18px; border-radius: var(--radius-sm);
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--text-main);
+}
+
