@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinPrintTaskScheduler — DK's Project Hub</title>
+  <meta name="description" content="Windows 자동 프린터 헤드 유지보수 스케줄러. 100% 무의존성 단일 .exe 파일. 무소음 스텔스 백그라운드 인쇄.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-flex">
+      <a href="../" class="logo">
+        <div class="logo-icon">DK</div>
+        DK's Project Hub
+      </a>
+      <div class="nav-links">
+        <a href="../">← 모든 프로젝트</a>
+        <a href="https://github.com/yushare999-tech" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="../">DK's Project Hub</a> &nbsp;/&nbsp; WinPrintTaskScheduler
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">🖨️ Windows Utility · v1.0.0 Stable Release</div>
+      <h1>
+        <span class="gradient-text">WinPrintTaskScheduler</span>
+      </h1>
+      <p>
+        Windows 환경에서 매일 지정된 시간에 프린터로 테스트 페이지를 자동 인쇄하는<br>
+        <strong>100% 무의존성 단일 .exe 파일</strong> 스케줄러입니다.<br>
+        프린터 헤드 막힘 방지 및 노즐 유지보수를 완전 자동화합니다.
+      </p>
+
+      <div class="cta-group">
+        <a href="releases/WinPrintTaskScheduler_v1.0.0.zip" class="btn btn-primary" id="btn-download-zip">
+          📦 v1.0.0 압축 패키지 다운로드 (.zip)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>핵심 기술 및 특징</h2>
+        <p>Windows OS 깊은 연동으로 제작된 실용적인 자동화 도구입니다.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>100% 무의존성 (Zero-Dependency)</h3>
+          <p>파이썬, .NET SDK, 외부 패키지 설치가 전혀 필요 없는 1개 단일 <code>.exe</code> 파일입니다. 어떤 PC에서도 복사만 하면 즉시 동작합니다.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🥷</div>
+          <h3>무소음 스텔스 백그라운드</h3>
+          <p>작업 스케줄러 실행 시 콘솔 창이나 팝업 다이얼로그가 단 0.001초도 뜨지 않고 100% 백그라운드로 조용히 실행됩니다.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📁</div>
+          <h3>%AppData% Roaming 전용 저장소</h3>
+          <p>모든 설정, 이력, 이미지를 Windows 표준 <code>%AppData%\WinPrintTaskScheduler</code> 공간에서 안전 관리하여 권한 오류 0%입니다.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>Self-Copy 자가 복제 영구 설치</h3>
+          <p>임시 폴더에서 실행해도 스케줄 등록 시 스스로 영구 공간으로 복제되어, 원본 파일을 삭제해도 365일 안전하게 작동합니다.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⏰</div>
+          <h3>직관적인 시간 선택 GUI</h3>
+          <p><code>[AM/PM]</code>, <code>[시]</code>, <code>[분]</code> 드롭다운으로 스케줄 시각을 손쉽게 설정합니다.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔔</div>
+          <h3>Windows Toast 알림 연동</h3>
+          <p>인쇄 성공 및 실패 시 Windows 10/11 알림 센터를 통해 결과를 즉시 알려줍니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Use -->
+  <section class="workflow" id="workflow">
+    <div class="container">
+      <div class="section-title">
+        <h2>사용 방법</h2>
+        <p>4단계로 끝나는 간단한 설치 및 스케줄 등록</p>
+      </div>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <h3>다운로드</h3>
+          <p>위의 버튼을 클릭하여 <code>WinPrintTaskScheduler.exe</code>를 다운받습니다.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <h3>더블 클릭 실행</h3>
+          <p>어느 폴더에서든 더블 클릭하면 환경 설정 GUI 창이 열립니다.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <h3>프린터 및 시각 설정</h3>
+          <p>프린터 드롭다운에서 대상 프린터를 선택하고, AM/PM 시/분을 지정합니다.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">04</div>
+          <h3>[Register Task] 클릭</h3>
+          <p>스케줄 등록 즉시 매일 지정 시각에 자동 인쇄가 시작됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 WinPrintTaskScheduler · <a href="../">DK's Project Hub</a> · by <a href="https://github.com/yushare999-tech" target="_blank">yushare999-tech</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
