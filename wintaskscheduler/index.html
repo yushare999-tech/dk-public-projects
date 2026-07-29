@@ -42,7 +42,6 @@
         <strong>100% 무의존성 단일 .exe 파일</strong> 스케줄러입니다.<br>
         프린터 헤드 막힘 방지 및 노즐 유지보수를 완전 자동화합니다.
       </p>
-
       <div class="cta-group">
         <a href="releases/WinPrintTaskScheduler_v1.0.0.zip" class="btn btn-primary" id="btn-download-zip">
           📦 v1.0.0 압축 패키지 다운로드 (.zip)
@@ -51,7 +50,76 @@
     </div>
   </section>
 
-  <!-- Features -->
+  <!-- ① UI Preview — FIRST SECTION after hero -->
+  <section class="ui-preview" id="preview">
+    <div class="container">
+      <div class="section-title">
+        <h2>실행 화면 미리보기</h2>
+        <p>더블 클릭으로 열리는 환경 설정 창의 각 항목을 확인하세요.</p>
+      </div>
+
+      <div class="preview-wrapper">
+        <!-- Screenshot -->
+        <div class="screenshot-box">
+          <div class="screenshot-titlebar">
+            <span class="titlebar-dot red"></span>
+            <span class="titlebar-dot yellow"></span>
+            <span class="titlebar-dot green"></span>
+            <span class="titlebar-title">WinPrintTaskScheduler v1.0.0 — Configuration</span>
+          </div>
+          <img src="images/config_ui.png" alt="WinPrintTaskScheduler 설정 화면" class="screenshot-img">
+        </div>
+
+        <!-- Callout List -->
+        <div class="callout-list">
+          <div class="callout-item">
+            <div class="callout-num">①</div>
+            <div class="callout-body">
+              <strong>🖨️ Target Printer (프린터 선택)</strong>
+              <p>PC에 연결된 모든 프린터 목록이 드롭다운으로 표시됩니다. 자동 인쇄를 수행할 대상 프린터를 선택하세요.</p>
+            </div>
+          </div>
+          <div class="callout-item">
+            <div class="callout-num">②</div>
+            <div class="callout-body">
+              <strong>🖼️ Image File (인쇄 이미지)</strong>
+              <p><b>Browse</b> 버튼으로 외부 이미지를 선택하면 <code>%AppData%\assets</code>로 자동 복사되어 원본이 삭제되어도 영구 사용 가능합니다.</p>
+            </div>
+          </div>
+          <div class="callout-item">
+            <div class="callout-num">③</div>
+            <div class="callout-body">
+              <strong>⏰ Schedule Time (자동 실행 시각)</strong>
+              <p><b>AM/PM</b>, <b>시(01~12)</b>, <b>분(00~59)</b> 세 드롭다운으로 매일 자동 인쇄가 실행될 시각을 직관적으로 지정합니다.</p>
+            </div>
+          </div>
+          <div class="callout-item">
+            <div class="callout-num">④</div>
+            <div class="callout-body">
+              <strong>🔁 Retry / Plan A (재시도 설정)</strong>
+              <p>프린터 오류 시 재시도 횟수(<b>times</b>)와 재시도 간격(<b>Interval</b> sec)을 설정합니다. 프린터가 일시적으로 오프라인이어도 자동 복구됩니다.</p>
+            </div>
+          </div>
+          <div class="callout-item">
+            <div class="callout-num">⑤</div>
+            <div class="callout-body">
+              <strong>📅 Task Scheduler Status (스케줄 상태)</strong>
+              <p>녹색 <b>✅ ACTIVE</b>: 스케줄이 등록되어 매일 자동 인쇄 중.<br>빨간 <b>⛔ INACTIVE</b>: 미등록 상태, Register Task 버튼으로 등록하세요.</p>
+            </div>
+          </div>
+          <div class="callout-item">
+            <div class="callout-num">⑥</div>
+            <div class="callout-body">
+              <strong>🖨️ Test Print / 💾 Save & Close</strong>
+              <p><b>Test Print Now</b>: 지금 즉시 테스트 인쇄를 실행합니다.<br><b>Save & Close</b>: 변경된 설정을 저장하고 창을 닫습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② Features -->
   <section class="features" id="features">
     <div class="container">
       <div class="section-title">
@@ -94,7 +162,7 @@
     </div>
   </section>
 
-  <!-- How to Use -->
+  <!-- ③ How to Use -->
   <section class="workflow" id="workflow">
     <div class="container">
       <div class="section-title">
@@ -121,75 +189,6 @@
           <div class="step-num">04</div>
           <h3>[Register Task] 클릭</h3>
           <p>스케줄 등록 즉시 매일 지정 시각에 자동 인쇄가 시작됩니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- UI Preview Section -->
-  <section class="ui-preview" id="preview">
-    <div class="container">
-      <div class="section-title">
-        <h2>실행 화면 미리보기</h2>
-        <p>더블 클릭으로 열리는 환경 설정 창의 각 항목을 확인하세요.</p>
-      </div>
-
-      <div class="preview-wrapper">
-        <!-- Screenshot -->
-        <div class="screenshot-box">
-          <div class="screenshot-titlebar">
-            <span class="titlebar-dot red"></span>
-            <span class="titlebar-dot yellow"></span>
-            <span class="titlebar-dot green"></span>
-            <span class="titlebar-title">WinPrintTaskScheduler v1.0.0 — Configuration</span>
-          </div>
-          <img src="images/config_ui.png" alt="WinPrintTaskScheduler 설정 화면" class="screenshot-img">
-        </div>
-
-        <!-- Callout List -->
-        <div class="callout-list">
-          <div class="callout-item">
-            <div class="callout-num">①</div>
-            <div class="callout-body">
-              <strong>🖨️ Target Printer (프린터 선택)</strong>
-              <p>PC에 연결된 모든 프린터 목록이 드롭다운으로 표시됩니다. 자동 인쇄를 수행할 대상 프린터를 선택하세요.</p>
-            </div>
-          </div>
-          <div class="callout-item">
-            <div class="callout-num">②</div>
-            <div class="callout-body">
-              <strong>🖼️ Print Image (인쇄 이미지)</strong>
-              <p>인쇄할 이미지 파일을 지정합니다. <b>Browse</b> 버튼으로 외부 이미지를 선택하면 내부 안전 공간(<code>%AppData%\assets</code>)으로 자동 복사되어 원본이 삭제되어도 영구 사용 가능합니다.</p>
-            </div>
-          </div>
-          <div class="callout-item">
-            <div class="callout-num">③</div>
-            <div class="callout-body">
-              <strong>⏰ Schedule Time (자동 실행 시각)</strong>
-              <p><b>AM/PM</b>, <b>시(01~12)</b>, <b>분(00~59)</b> 드롭다운으로 매일 자동 인쇄가 실행될 정확한 시각을 직관적으로 지정합니다.</p>
-            </div>
-          </div>
-          <div class="callout-item">
-            <div class="callout-num">④</div>
-            <div class="callout-body">
-              <strong>📅 Schedule Status (스케줄 상태)</strong>
-              <p>현재 Windows 작업 스케줄러 등록 여부와 최초 등록 날짜를 실시간으로 표시합니다. 녹색 <b>ACTIVE</b>는 정상 등록 상태를 의미합니다.</p>
-            </div>
-          </div>
-          <div class="callout-item">
-            <div class="callout-num">⑤</div>
-            <div class="callout-body">
-              <strong>🖨️ Test Print (즉시 테스트 인쇄)</strong>
-              <p>스케줄을 기다리지 않고 지금 바로 설정된 프린터로 테스트 인쇄를 실행합니다. 설정 확인 용도로 활용하세요.</p>
-            </div>
-          </div>
-          <div class="callout-item">
-            <div class="callout-num">⑥</div>
-            <div class="callout-body">
-              <strong>✅ / ❌ Register · Unregister Task (스케줄 등록/해제)</strong>
-              <p><b>Register Task</b>: 현재 설정을 저장하고 Windows 작업 스케줄러에 자동 등록합니다. 이 순간 프로그램이 자기 자신을 영구 공간으로 복제 설치합니다.<br><b>Unregister Task</b>: 등록된 스케줄을 해제합니다.</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
