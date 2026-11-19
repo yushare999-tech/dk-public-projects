@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>탕수육 맛집 위치 &amp; 리뷰 요약 (7곳)</title>
+  <style>
+    :root {
+      --bg: #080c14;
+      --bg-elevated: #0f1624;
+      --bg-card: rgba(15, 22, 36, 0.85);
+      --bg-card-hover: rgba(23, 33, 54, 0.95);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(245, 200, 66, 0.4);
+      --text: #f0f4f8;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --gold: #f5c842;
+      --gold-soft: rgba(245, 200, 66, 0.12);
+      --cyan: #00d2ff;
+      --cyan-soft: rgba(0, 210, 255, 0.1);
+      --amber: #fb923c;
+      --amber-soft: rgba(251, 146, 60, 0.12);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top center, #111c33 0%, var(--bg) 55%);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+      padding-bottom: 64px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header.hero {
+      padding: 48px 0 28px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gold);
+      background: var(--gold-soft);
+      border: 1px solid rgba(245, 200, 66, 0.25);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(1.65rem, 4vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      color: var(--text-muted);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pill:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      color: var(--text);
+    }
+
+    .pill.active {
+      background: var(--gold-soft);
+      border-color: var(--border-active);
+      color: var(--gold);
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1 1 220px;
+      max-width: 300px;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 14px;
+      color: var(--text);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box input::placeholder { color: var(--text-dim); }
+    .search-box input:focus { border-color: var(--cyan); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .card.is-warning {
+      border-color: rgba(251, 146, 60, 0.25);
+    }
+
+    .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .title-group {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .num {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: var(--gold-soft);
+      padding: 2px 9px;
+      border-radius: 6px;
+    }
+
+    .card h2 {
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .hanja {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--cyan-soft);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 210, 255, 0.2);
+    }
+
+    .badge.warn {
+      background: var(--amber-soft);
+      color: var(--amber);
+      border-color: rgba(251, 146, 60, 0.28);
+    }
+
+    .address-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+    }
+
+    .address-text {
+      color: var(--text);
+      font-weight: 500;
+      margin-right: auto;
+    }
+
+    .btn-mini {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-mini:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--text);
+    }
+
+    .intro {
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      margin-bottom: 14px;
+    }
+
+    .details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .details li {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .details li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .details strong {
+      color: var(--text);
+    }
+
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 48px 20px;
+      color: var(--text-muted);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #1e293b;
+      color: var(--text);
+      border: 1px solid rgba(0, 210, 255, 0.35);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.22s ease;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 600px) {
+      header.hero { padding: 32px 0 22px; }
+      .card { padding: 18px; }
+      .address-row { flex-direction: column; align-items: flex-start; }
+      .search-box { max-width: none; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="eyebrow">🥢 외부 공유 페이지 · 맛집 요약</div>
+      <h1>이미지 속 탕수육 맛집 7곳</h1>
+      <p class="subtitle">위치 정보, 매장 분위기 및 방문객 리뷰 핵심 요약입니다.</p>
+    </header>
+
+    <section class="controls" aria-label="필터 및 검색">
+      <div class="filter-pills" role="tablist">
+        <button class="pill active" data-region="all" type="button">전체 (7)</button>
+        <button class="pill" data-region="seoul" type="button">서울 (4)</button>
+        <button class="pill" data-region="incheon" type="button">인천 (1)</button>
+        <button class="pill" data-region="etc" type="button">충북 · 부산 (2)</button>
+      </div>
+      <div class="search-box">
+        <input id="searchInput" type="search" placeholder="상호, 지역, 키워드 검색..." aria-label="맛집 검색">
+      </div>
+    </section>
+
+    <main class="grid" id="cardGrid">
+      <!-- 1. 모던눌랑 -->
+      <article class="card" data-region="seoul" data-search="모던눌랑 센트럴시티점 서울 서초구 사평대로 205 상하이 서양식 소스 동파육 주류 디저트">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">01</span>
+            <h2>모던눌랑 <span class="hanja">센트럴시티점</span></h2>
+          </div>
+          <div class="badges">
+            <span class="badge">서울 서초</span>
+          </div>
+        </div>
+        <div class="address-row">
+          <span class="address-text">📍 서울 서초구 사평대로 205</span>
+          <button class="btn-mini copy-btn" type="button" data-copy="서울 서초구 사평대로 205">주소 복사</button>
+          <a class="btn-mini" href="https://map.naver.com/p/search/%EB%AA%A8%EB%8D%98%EB%88%8C%EB%9E%91%20%EC%84%BC%ED%8A%B8%EB%9F%B4%EC%8B%9C%ED%8B%B0%EC%A0%90" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+        </div>
+        <p class="intro">상하이 스타일의 세련되고 차분한 분위기에서 서양식 소스 감각이 더해진 중화요리를 선보이는 중식당입니다.</p>
+        <ul class="details">
+          <li><strong>분위기 및 특징:</strong> 아늑하고 트렌디한 분위기로 모임이나 식사 장소로 자주 언급되며, 주류 및 디저트 구색도 갖추고 있습니다.</li>
+          <li><strong>리뷰 요약:</strong> 방문객들은 독특한 메뉴 구성과 프레젠테이션에 긍정적인 반응을 보이며, 동파육 등 요리 맛을 호평합니다. 다만 피크 타임에는 음식 온도가 기대만큼 뜨겁지 않거나 응대가 다소 늦을 수 있다는 의견도 있습니다.</li>
+        </ul>
+      </article>
+
+      <!-- 2. 외래향 -->
+      <article class="card" data-region="seoul" data-search="외래향 서울 관악구 남부순환로 1801 라피스빌딩 2층 가족 모임 매운 탕수육 건고추">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">02</span>
+            <h2>외래향</h2>
+          </div>
+          <div class="badges">
+            <span class="badge">서울 관악</span>
+          </div>
+        </div>
+        <div class="address-row">
+          <span class="address-text">📍 서울 관악구 남부순환로 1801 라피스빌딩 2층</span>
+          <button class="btn-mini copy-btn" type="button" data-copy="서울 관악구 남부순환로 1801 라피스빌딩 2층">주소 복사</button>
+          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%99%B8%EB%9E%98%ED%96%A5%20%EC%84%9C%EC%9A%B8%20%EA%B4%80%EC%95%85%EA%B5%AC%20%EB%82%A8%EB%B6%80%EC%88%9C%ED%99%98%EB%A1%9C%201801" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+        </div>
+        <ul class="details">
+          <li><strong>분위기 및 특징:</strong> 테이블 간 간격이 비교적 여유롭고 캐주얼한 분위기로 가족 모임이나 지인 식사에 무난합니다.</li>
+          <li><strong>리뷰 요약:</strong> 양이 넉넉하고 기본 중식 메뉴 외에도 다양한 요리를 맛볼 수 있다는 평가가 있습니다. 매운 탕수육에 들어가는 건고추가 매우 매운 편이고, 일부 메뉴는 조리 후 제공 온도가 미지근하게 느껴졌다는 후기도 있습니다.</li>
+        </ul>
+      </article>
+
+      <!-- 3. 한강춘 -->
+      <article class="card is-warning" data-region="seoul" data-search="한강춘 서울 용산구 이촌로 248 동강 차이옌 취원">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">03</span>
+            <h2>한강춘</h2>
+          </div>
+          <div class="badges">
+            <span class="badge">서울 용산</span>
+            <span class="badge warn">상세 리뷰 미확인</span>
+          </div>
+        </div>
+        <div class="address-row">
+          <span class="address-text">📍 서울 용산구 이촌로 248 (이미지 표기)</span>
+          <button class="btn-mini copy-btn" type="button" data-copy="서울 용산구 이촌로 248">주소 복사</button>
+          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%EC%9D%B4%EC%B4%8C%EB%A1%9C%20248" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+        </div>
+        <ul class="details">
+          <li><strong>참고 사항:</strong> 이미지에는 서울 용산구 이촌로 248의 한강춘이 표기되어 있으나, 해당 주소 인근에서는 중화요리 관련 업장으로 동강, 차이옌, 취원 등이 확인되며 한강춘의 상세 리뷰 데이터는 확인되지 않았습니다.</li>
+        </ul>
+      </article>
+
+      <!-- 4. 안동장 -->
+      <article class="card" data-region="seoul" data-search="안동장 서울 중구 을지로 124 노포 웨이팅 탕수육 짬뽕 짜장면 굴짬뽕 바삭">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">04</span>
+            <h2>안동장</h2>
+          </div>
+          <div class="badges">
+            <span class="badge">서울 중구</span>
+          </div>
+        </div>
+        <div class="address-row">
+          <span class="address-text">📍 서울 중구 을지로 124</span>
+          <button class="btn-mini copy-btn" type="button" data-copy="서울 중구 을지로 124">주소 복사</button>
+          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%EC%9E%A5%20%EC%84%9C%EC%9A%B8%20%EC%A4%91%EA%B5%AC%20%EC%9D%84%EC%A7%80%EB%A1%9C%20124" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+        </div>
+        <p class="intro">서울 중구 을지로에 위치한 유서 깊은 중식당입니다.</p>
+        <ul class="details">
+          <li><strong>분위기 및 특징:</strong> 오랜 역사를 지닌 노포 특유의 정겨운 분위기가 있으며, 식사 시간대에는 웨이팅이 발생할 수 있습니다.</li>
+          <li><strong>리뷰 요약:</strong> 방문객들은 탕수육과 짬뽕, 짜장면 등 기본기의 탄탄함과 푸짐한 양을 높이 평가합니다. 특히 겨울철 굴짬뽕과 바삭한 식감의 탕수육에 대한 만족도가 높습니다.</li>
+        </ul>
+      </article>
+
+      <!-- 5. 신승반점 -->
+      <article class="card" data-region="incheon" data-search="신승반점 新勝飯店 인천 중구 차이나타운로44번길 31-3 짜장면 짬뽕 탕수육 쫄깃">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">05</span>
+            <h2>신승반점 <span class="hanja">(新勝飯店)</span></h2>
+          </div>
+          <div class="badges">
+            <span class="badge">인천 중구</span>
+          </div>
+        </div>
+        <div class="address-row">
+          <span class="address-text">📍 인천 중구 차이나타운로44번길 31-3</span>
+          <button class="btn-mini copy-btn" type="button" data-copy="인천 중구 차이나타운로44번길 31-3">주소 복사</button>
+          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%8B%A0%EC%8A%B9%EB%B0%98%EC%A0%90%20%EC%B0%A8%EC%9D%B4%EB%82%98%ED%83%80%EC%9A%B4" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+        </div>
+        <ul class="details">
+          <li><strong>분위기 및 특징:</strong> 차이나타운 특유의 활기찬 분위기 속에서 식사할 수 있으며, 관광객과 단체 방문객이 많이 찾습니다.</li>
+          <li><strong>리뷰 요약:</strong> 탕수육과 짜장면, 짬뽕 등의 맛이 전반적으로 준수하고 양이 넉넉하다는 평이 많습니다. 쫄깃한 식감과 소스의 조화를 좋아하는 방문객들이 자주 언급하며, 인기 시간대에는 대기 시간이 생길 수 있습니다.</li>
+        </ul>
+      </article>
+
+      <!-- 6. 송학반점 -->
+      <article class="card" data-region="etc" data-search="송학반점 충북 제천시 의병대로12길 7 명동 월요일 휴무 동네 중식당">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">06</span>
+            <h2>송학반점</h2>
+          </div>
+          <div class="badges">
+            <span class="badge">충북 제천</span>
+          </div>
+        </div>
+        <div class="address-row">
+          <span class="address-text">📍 충북 제천시 의병대로12길 7 인근 명동 일대</span>
+          <button class="btn-mini copy-btn" type="button" data-copy="충북 제천시 의병대로12길 7">주소 복사</button>
+          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%86%A1%ED%95%99%EB%B0%98%EC%A0%90%20%EC%A0%9C%EC%B2%9C" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+        </div>
+        <ul class="details">
+          <li><strong>분위기 및 특징:</strong> 부담 없이 식사하기 좋은 캐주얼한 분위기의 지역 중식당으로, 월요일은 휴무이며 점심·저녁 시간대에 운영합니다.</li>
+          <li><strong>리뷰 요약:</strong> 지역 방문객들이 찾는 동네 중식당으로, 별도의 상세 후기 텍스트는 많지 않으나 식사 메뉴 위주로 이용됩니다.</li>
+        </ul>
+      </article>
+
+      <!-- 7. 옥성반점 -->
+      <article class="card" data-region="etc" data-search="옥성반점 부산 중구 보수북길 14 원도심 골목 상권">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">07</span>
+            <h2>옥성반점</h2>
+          </div>
+          <div class="badges">
+            <span class="badge">부산 중구</span>
+          </div>
+        </div>
+        <div class="address-row">
+          <span class="address-text">📍 부산 중구 보수북길 14</span>
+          <button class="btn-mini copy-btn" type="button" data-copy="부산 중구 보수북길 14">주소 복사</button>
+          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%98%A5%EC%84%B1%EB%B0%98%EC%A0%90%20%EB%B6%80%EC%82%B0%20%EC%A4%91%EA%B5%AC%20%EB%B3%B4%EC%88%98%EB%B6%81%EA%B8%B8%2014" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+        </div>
+        <ul class="details">
+          <li><strong>분위기 및 특징:</strong> 골목 상권 내 소규모로 운영되는 캐주얼한 중식당으로, 점심과 저녁 식사 손님이 주로 찾습니다.</li>
+          <li><strong>리뷰 요약:</strong> 부산 원도심에서 정겨운 중화요리를 맛볼 수 있는 곳으로 언급되며, 상세 리뷰 항목은 제한적입니다.</li>
+        </ul>
+      </article>
+    </main>
+
+    <div class="empty-state" id="emptyState">
+      조건에 일치하는 매장이 없습니다.
+    </div>
+
+    <footer>
+      전달된 요약 데이터 기준 정적 공유 페이지 · dk-public-projects/s
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const pills = document.querySelectorAll('.pill');
+    const searchInput = document.getElementById('searchInput');
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const emptyState = document.getElementById('emptyState');
+    const toast = document.getElementById('toast');
+    let activeRegion = 'all';
+    let toastTimer = null;
+
+    function applyFilter() {
+      const q = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const regionMatch = activeRegion === 'all' || card.dataset.region === activeRegion;
+        const text = (card.dataset.search + ' ' + card.textContent).toLowerCase();
+        const queryMatch = !q || text.includes(q);
+        const show = regionMatch && queryMatch;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount += 1;
+      });
+
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        pills.forEach((p) => p.classList.remove('active'));
+        pill.classList.add('active');
+        activeRegion = pill.dataset.region;
+        applyFilter();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilter);
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    document.querySelectorAll('.copy-btn').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const text = btn.dataset.copy;
+        try {
+          await navigator.clipboard.writeText(text);
+          showToast('주소가 복사되었습니다: ' + text);
+        } catch {
+          showToast('복사에 실패했습니다. 직접 선택해 복사해 주세요.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
