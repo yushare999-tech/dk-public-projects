@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>탕수육 맛집 위치 &amp; 리뷰 요약 (7곳)</title>
+  <title>탕수육 맛집 7곳 가이드 — 플레이스·네비 주소·주차·메뉴 가격</title>
   <style>
     :root {
       --bg: #080c14;
       --bg-elevated: #0f1624;
-      --bg-card: rgba(15, 22, 36, 0.85);
-      --bg-card-hover: rgba(23, 33, 54, 0.95);
+      --bg-card: rgba(15, 22, 36, 0.88);
+      --bg-card-hover: rgba(23, 33, 54, 0.96);
       --border: rgba(255, 255, 255, 0.08);
-      --border-active: rgba(245, 200, 66, 0.4);
+      --border-active: rgba(245, 200, 66, 0.45);
       --text: #f0f4f8;
       --text-muted: #94a3b8;
       --text-dim: #64748b;
@@ -20,8 +20,12 @@
       --gold-soft: rgba(245, 200, 66, 0.12);
       --cyan: #00d2ff;
       --cyan-soft: rgba(0, 210, 255, 0.1);
+      --green: #10b981;
+      --green-soft: rgba(16, 185, 129, 0.14);
+      --red: #f87171;
+      --red-soft: rgba(248, 113, 113, 0.14);
       --amber: #fb923c;
-      --amber-soft: rgba(251, 146, 60, 0.12);
+      --amber-soft: rgba(251, 146, 60, 0.14);
       --radius: 16px;
     }
 
@@ -32,21 +36,21 @@
       background: radial-gradient(circle at top center, #111c33 0%, var(--bg) 55%);
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.6;
       min-height: 100vh;
       padding-bottom: 64px;
     }
 
     .container {
-      max-width: 960px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     header.hero {
-      padding: 48px 0 28px;
+      padding: 44px 0 26px;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .eyebrow {
@@ -54,35 +58,103 @@
       align-items: center;
       gap: 6px;
       font-size: 0.78rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--gold);
       background: var(--gold-soft);
       border: 1px solid rgba(245, 200, 66, 0.25);
       padding: 4px 12px;
       border-radius: 999px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     h1 {
-      font-size: clamp(1.65rem, 4vw, 2.25rem);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
       font-weight: 800;
       letter-spacing: -0.02em;
       line-height: 1.25;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .subtitle {
       color: var(--text-muted);
-      font-size: 0.96rem;
+      font-size: 0.94rem;
     }
 
+    /* Quick summary table */
+    .summary-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+    }
+
+    .summary-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .summary-note {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--text-dim);
+    }
+
+    table.summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      min-width: 720px;
+    }
+
+    .summary-table th {
+      text-align: left;
+      padding: 9px 10px;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .summary-table td {
+      padding: 10px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      vertical-align: middle;
+    }
+
+    .summary-table tr:last-child td { border-bottom: none; }
+    .summary-table tr:hover td { background: rgba(255, 255, 255, 0.025); }
+    .summary-table a.row-link {
+      color: var(--text);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .summary-table a.row-link:hover { color: var(--gold); text-decoration: underline; }
+
+    .table-place-link {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .table-place-link:hover { text-decoration: underline; }
+
+    /* Controls */
     .controls {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .filter-pills {
@@ -98,14 +170,14 @@
       color: var(--text-muted);
       padding: 7px 14px;
       border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
     }
 
     .pill:hover {
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.22);
       color: var(--text);
     }
 
@@ -116,7 +188,6 @@
     }
 
     .search-box {
-      position: relative;
       flex: 1 1 220px;
       max-width: 300px;
     }
@@ -136,6 +207,7 @@
     .search-box input::placeholder { color: var(--text-dim); }
     .search-box input:focus { border-color: var(--cyan); }
 
+    /* Cards */
     .grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -156,8 +228,9 @@
       border-color: rgba(255, 255, 255, 0.16);
     }
 
-    .card.is-warning {
-      border-color: rgba(251, 146, 60, 0.25);
+    .card.is-closed {
+      border-color: rgba(248, 113, 113, 0.3);
+      opacity: 0.88;
     }
 
     .card-header {
@@ -166,7 +239,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .title-group {
@@ -191,7 +264,7 @@
       letter-spacing: -0.01em;
     }
 
-    .hanja {
+    .subname {
       font-size: 0.9rem;
       color: var(--text-muted);
       font-weight: 400;
@@ -201,6 +274,7 @@
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .badge {
@@ -210,71 +284,137 @@
       border-radius: 999px;
       background: var(--cyan-soft);
       color: var(--cyan);
-      border: 1px solid rgba(0, 210, 255, 0.2);
+      border: 1px solid rgba(0, 210, 255, 0.22);
+      white-space: nowrap;
     }
 
-    .badge.warn {
+    .badge.park-ok {
+      background: var(--green-soft);
+      color: var(--green);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .badge.park-no {
       background: var(--amber-soft);
       color: var(--amber);
-      border-color: rgba(251, 146, 60, 0.28);
+      border-color: rgba(251, 146, 60, 0.3);
     }
 
-    .address-row {
+    .badge.closed {
+      background: var(--red-soft);
+      color: var(--red);
+      border-color: rgba(248, 113, 113, 0.35);
+    }
+
+    /* Info Box */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .info-item.full {
+      grid-column: 1 / -1;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .info-val {
+      font-size: 0.91rem;
+      color: var(--text);
+      font-weight: 500;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 8px;
-      padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 16px;
-      font-size: 0.9rem;
     }
 
-    .address-text {
-      color: var(--text);
-      font-weight: 500;
-      margin-right: auto;
+    .info-val a.tel-link {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .info-val a.tel-link:hover { text-decoration: underline; }
+
+    .price-highlight {
+      color: var(--gold);
+      font-weight: 700;
     }
 
-    .btn-mini {
+    .action-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .btn {
       appearance: none;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      font-size: 0.78rem;
+      gap: 6px;
+      font-size: 0.82rem;
       font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 6px;
+      padding: 7px 13px;
+      border-radius: 8px;
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.05);
-      color: var(--text-muted);
+      color: var(--text);
       text-decoration: none;
       cursor: pointer;
       transition: all 0.15s ease;
     }
 
-    .btn-mini:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--text);
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(255, 255, 255, 0.22);
     }
 
-    .intro {
-      color: var(--text-muted);
-      font-size: 0.94rem;
-      margin-bottom: 14px;
+    .btn-naver {
+      background: rgba(3, 199, 90, 0.16);
+      border-color: rgba(3, 199, 90, 0.4);
+      color: #34d399;
+    }
+    .btn-naver:hover {
+      background: rgba(3, 199, 90, 0.26);
+      border-color: rgba(3, 199, 90, 0.6);
+      color: #6ee7b7;
+    }
+
+    .btn-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
     }
 
     .details {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 7px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 12px;
     }
 
     .details li {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: #cbd5e1;
       padding-left: 14px;
       position: relative;
@@ -288,9 +428,7 @@
       font-weight: 700;
     }
 
-    .details strong {
-      color: var(--text);
-    }
+    .details strong { color: var(--text); }
 
     .empty-state {
       display: none;
@@ -332,12 +470,13 @@
       text-align: center;
       font-size: 0.82rem;
       color: var(--text-dim);
+      line-height: 1.7;
     }
 
-    @media (max-width: 600px) {
-      header.hero { padding: 32px 0 22px; }
+    @media (max-width: 680px) {
+      header.hero { padding: 30px 0 20px; }
       .card { padding: 18px; }
-      .address-row { flex-direction: column; align-items: flex-start; }
+      .info-grid { grid-template-columns: 1fr; }
       .search-box { max-width: none; width: 100%; }
     }
   </style>
@@ -345,93 +484,252 @@
 <body>
   <div class="container">
     <header class="hero">
-      <div class="eyebrow">🥢 외부 공유 페이지 · 맛집 요약</div>
-      <h1>이미지 속 탕수육 맛집 7곳</h1>
-      <p class="subtitle">위치 정보, 매장 분위기 및 방문객 리뷰 핵심 요약입니다.</p>
+      <div class="eyebrow">🥢 외부 공유 페이지 · 네이버 플레이스 검증판</div>
+      <h1>탕수육 맛집 7곳 가이드</h1>
+      <p class="subtitle">실제 가게 페이지(네이버 플레이스 직통 링크), 네비 도로명 주소, 전화번호, 주차 가능 여부 및 기본 메뉴·탕수육 가격 정리</p>
     </header>
 
+    <!-- 한눈에 보는 요약표 -->
+    <section class="summary-wrap" aria-label="한눈에 보는 비교표">
+      <div class="summary-title">
+        <span>📋 한눈에 보기</span>
+        <span class="summary-note">※ 메뉴 가격은 네이버 플레이스·최근 방문 정보 기준이며 매장 사정에 따라 변동될 수 있습니다.</span>
+      </div>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>상호</th>
+            <th>지역</th>
+            <th>주차</th>
+            <th>탕수육 가격대</th>
+            <th>기본 식사(짜장·짬뽕)</th>
+            <th>가게 페이지</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a class="row-link" href="#place-1">1. 모던눌랑 센트럴시티점</a></td>
+            <td>서울 서초</td>
+            <td><span class="badge park-ok">가능 (금액별 지원)</span></td>
+            <td>40,000원 / 소고기 65,000원</td>
+            <td>자장 18,000 / 짬뽕 20,000~</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/37086581" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+          </tr>
+          <tr>
+            <td><a class="row-link" href="#place-2">2. 외래향 서울대점</a></td>
+            <td>서울 관악</td>
+            <td><span class="badge park-ok">가능 (타워/1시간)</span></td>
+            <td>小 28,000원 (매운/달콤)</td>
+            <td>짜장 10,000 / 삼선짬뽕 12,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/37770452" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+          </tr>
+          <tr>
+            <td><a class="row-link" href="#place-3">3. 한강춘</a></td>
+            <td>서울 용산</td>
+            <td><span class="badge closed">폐업 확인</span></td>
+            <td>확인 불가 (영업 종료)</td>
+            <td>확인 불가</td>
+            <td><span style="color:var(--red);font-size:0.8rem;">미등록 (폐업)</span></td>
+          </tr>
+          <tr>
+            <td><a class="row-link" href="#place-4">4. 안동장</a></td>
+            <td>서울 중구</td>
+            <td><span class="badge park-no">불가 (인근 유료)</span></td>
+            <td>대 30,000원 / 쇠고기·사천 40,000원</td>
+            <td>짜장 9,000 / 굴짬뽕 13,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/11677524" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+          </tr>
+          <tr>
+            <td><a class="row-link" href="#place-5">5. 신승반점</a></td>
+            <td>인천 중구</td>
+            <td><span class="badge park-no">불가 (공영주차장)</span></td>
+            <td>찹쌀 소 30,000 / 대 45,000원</td>
+            <td>유니짜장 11,500 / 짬뽕 10,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/11887658" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+          </tr>
+          <tr>
+            <td><a class="row-link" href="#place-6">6. 송학반점</a></td>
+            <td>충북 제천</td>
+            <td><span class="badge park-no">전용 없음 (공영/골목)</span></td>
+            <td>28,000원 (돼지갈비 38,000원)</td>
+            <td>짜장 7,000 / 짬뽕 9,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/17599335" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+          </tr>
+          <tr>
+            <td><a class="row-link" href="#place-7">7. 옥성반점</a></td>
+            <td>부산 중구</td>
+            <td><span class="badge park-no">불가 (인근 유료/골목)</span></td>
+            <td>미니 12,000 / 소 20,000원대(참고)</td>
+            <td>짜장 7,000 / 간짜장·짬뽕 8,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/1067469174" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 필터 및 검색 -->
     <section class="controls" aria-label="필터 및 검색">
       <div class="filter-pills" role="tablist">
-        <button class="pill active" data-region="all" type="button">전체 (7)</button>
-        <button class="pill" data-region="seoul" type="button">서울 (4)</button>
-        <button class="pill" data-region="incheon" type="button">인천 (1)</button>
-        <button class="pill" data-region="etc" type="button">충북 · 부산 (2)</button>
+        <button class="pill active" data-filter="all" type="button">전체 (7)</button>
+        <button class="pill" data-filter="park-ok" type="button">주차 가능 (2)</button>
+        <button class="pill" data-filter="seoul" type="button">서울 (4)</button>
+        <button class="pill" data-filter="incheon" type="button">인천 (1)</button>
+        <button class="pill" data-filter="etc" type="button">충북 · 부산 (2)</button>
       </div>
       <div class="search-box">
-        <input id="searchInput" type="search" placeholder="상호, 지역, 키워드 검색..." aria-label="맛집 검색">
+        <input id="searchInput" type="search" placeholder="상호, 주소, 메뉴, 주차 검색..." aria-label="맛집 검색">
       </div>
     </section>
 
     <main class="grid" id="cardGrid">
       <!-- 1. 모던눌랑 -->
-      <article class="card" data-region="seoul" data-search="모던눌랑 센트럴시티점 서울 서초구 사평대로 205 상하이 서양식 소스 동파육 주류 디저트">
+      <article id="place-1" class="card" data-region="seoul" data-parking="yes" data-search="모던눌랑 센트럴시티점 서울 서초구 사평대로 205 주차가능 신세계 파미에 02-6282-5005 40000 65000 동파육">
         <div class="card-header">
           <div class="title-group">
             <span class="num">01</span>
-            <h2>모던눌랑 <span class="hanja">센트럴시티점</span></h2>
+            <h2>모던눌랑 <span class="subname">센트럴시티점</span></h2>
           </div>
           <div class="badges">
             <span class="badge">서울 서초</span>
+            <span class="badge park-ok">🅿️ 주차 가능</span>
           </div>
         </div>
-        <div class="address-row">
-          <span class="address-text">📍 서울 서초구 사평대로 205</span>
-          <button class="btn-mini copy-btn" type="button" data-copy="서울 서초구 사평대로 205">주소 복사</button>
-          <a class="btn-mini" href="https://map.naver.com/p/search/%EB%AA%A8%EB%8D%98%EB%88%8C%EB%9E%91%20%EC%84%BC%ED%8A%B8%EB%9F%B4%EC%8B%9C%ED%8B%B0%EC%A0%90" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>서울 서초구 사평대로 205</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(반포동 118-3, 센트럴시티 외부 대로변 단독 건물 · 고속터미널역 3번 출구 70m)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val"><a class="tel-link" href="tel:02-6282-5005">02-6282-5005</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">가능 (신세계 센트럴·파미에 주차장 · 5만원↑ 1시간 / 10만원↑ 2시간 / 15만원↑ 3시간 무료, 초과 10분당 1,000원)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
+            <div class="info-val">
+              <span class="price-highlight">탕수육 40,000원 · 소고기 탕수육 65,000원 · 생표고 탕수 33,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| XO소스 자장면 18,000원 · 고기 짬뽕 20,000원 · 해물 짬뽕 21,000원 · 양주식 볶음밥 19,000원 · 유린기/고추깐풍기 40,000원 · 동파육 with Buns 50,000원</span>
+            </div>
+          </div>
         </div>
-        <p class="intro">상하이 스타일의 세련되고 차분한 분위기에서 서양식 소스 감각이 더해진 중화요리를 선보이는 중식당입니다.</p>
+
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/37086581" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="서울 서초구 사평대로 205">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:02-6282-5005">📞 전화 걸기</a>
+        </div>
+
         <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 아늑하고 트렌디한 분위기로 모임이나 식사 장소로 자주 언급되며, 주류 및 디저트 구색도 갖추고 있습니다.</li>
-          <li><strong>리뷰 요약:</strong> 방문객들은 독특한 메뉴 구성과 프레젠테이션에 긍정적인 반응을 보이며, 동파육 등 요리 맛을 호평합니다. 다만 피크 타임에는 음식 온도가 기대만큼 뜨겁지 않거나 응대가 다소 늦을 수 있다는 의견도 있습니다.</li>
+          <li><strong>분위기 및 특징:</strong> 상하이 스타일의 세련·트렌디한 분위기에서 서양식 소스 감각이 더해진 중화요리를 선보이며, 주류 및 디저트 구색을 갖추고 있습니다.</li>
+          <li><strong>리뷰 요약:</strong> 독특한 메뉴 구성과 프레젠테이션, 동파육 등 요리 맛에 대한 호평이 많습니다. 다만 피크 타임에는 음식 온도가 기대만큼 뜨겁지 않거나 응대가 다소 늦을 수 있다는 의견이 있습니다.</li>
         </ul>
       </article>
 
       <!-- 2. 외래향 -->
-      <article class="card" data-region="seoul" data-search="외래향 서울 관악구 남부순환로 1801 라피스빌딩 2층 가족 모임 매운 탕수육 건고추">
+      <article id="place-2" class="card" data-region="seoul" data-parking="yes" data-search="외래향 서울대점 서울 관악구 남부순환로 1801 라피스빌딩 2층 02-888-1224 주차가능 28000 매운탕수육">
         <div class="card-header">
           <div class="title-group">
             <span class="num">02</span>
-            <h2>외래향</h2>
+            <h2>외래향 <span class="subname">서울대점</span></h2>
           </div>
           <div class="badges">
             <span class="badge">서울 관악</span>
+            <span class="badge park-ok">🅿️ 주차 가능</span>
           </div>
         </div>
-        <div class="address-row">
-          <span class="address-text">📍 서울 관악구 남부순환로 1801 라피스빌딩 2층</span>
-          <button class="btn-mini copy-btn" type="button" data-copy="서울 관악구 남부순환로 1801 라피스빌딩 2층">주소 복사</button>
-          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%99%B8%EB%9E%98%ED%96%A5%20%EC%84%9C%EC%9A%B8%20%EA%B4%80%EC%95%85%EA%B5%AC%20%EB%82%A8%EB%B6%80%EC%88%9C%ED%99%98%EB%A1%9C%201801" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>서울 관악구 남부순환로 1801 2층 201호</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(봉천동 874-4, 라피스빌딩 2층 · 서울대입구역 5번 출구 약 190m)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val"><a class="tel-link" href="tel:02-888-1224">02-888-1224</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">가능 (건물 내 주차타워 이용 / 만차 시 맞은편 건물 지원 안내 · 3만원 이상 결제 시 1시간 무료)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
+            <div class="info-val">
+              <span class="price-highlight">외래향탕수육(小) 28,000원 · 탕수육(달콤)(小) 28,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 10,000원 · 삼선짬뽕/삼선하얀짬뽕 12,000원 · 삼선볶음밥 12,000원 · 잡채밥/외래향특면 13,000원 · 깐풍기/유린기/칠리새우(小) 35,000원</span>
+            </div>
+          </div>
         </div>
+
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/37770452" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="서울 관악구 남부순환로 1801">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:02-888-1224">📞 전화 걸기</a>
+        </div>
+
         <ul class="details">
           <li><strong>분위기 및 특징:</strong> 테이블 간 간격이 비교적 여유롭고 캐주얼한 분위기로 가족 모임이나 지인 식사에 무난합니다.</li>
-          <li><strong>리뷰 요약:</strong> 양이 넉넉하고 기본 중식 메뉴 외에도 다양한 요리를 맛볼 수 있다는 평가가 있습니다. 매운 탕수육에 들어가는 건고추가 매우 매운 편이고, 일부 메뉴는 조리 후 제공 온도가 미지근하게 느껴졌다는 후기도 있습니다.</li>
+          <li><strong>리뷰 요약:</strong> 양이 넉넉하고 다양한 요리를 맛볼 수 있습니다. 매운 탕수육에 들어가는 건고추가 매우 매운 편이며, 일부 메뉴는 제공 온도가 미지근하게 느껴졌다는 후기가 있습니다.</li>
         </ul>
       </article>
 
       <!-- 3. 한강춘 -->
-      <article class="card is-warning" data-region="seoul" data-search="한강춘 서울 용산구 이촌로 248 동강 차이옌 취원">
+      <article id="place-3" class="card is-closed" data-region="seoul" data-parking="no" data-search="한강춘 서울 용산구 이촌로 248 폐업 한강맨션 동강 차이옌 취원">
         <div class="card-header">
           <div class="title-group">
             <span class="num">03</span>
-            <h2>한강춘</h2>
+            <h2>한강춘 <span class="subname">이촌동 (과거 위치)</span></h2>
           </div>
           <div class="badges">
             <span class="badge">서울 용산</span>
-            <span class="badge warn">상세 리뷰 미확인</span>
+            <span class="badge closed">⚠️ 폐업 확인 · 플레이스 미등록</span>
           </div>
         </div>
-        <div class="address-row">
-          <span class="address-text">📍 서울 용산구 이촌로 248 (이미지 표기)</span>
-          <button class="btn-mini copy-btn" type="button" data-copy="서울 용산구 이촌로 248">주소 복사</button>
-          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%EC%9D%B4%EC%B4%8C%EB%A1%9C%20248" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">과거 네비 주소 (영업 종료)</span>
+            <div class="info-val">
+              <span>서울 용산구 이촌로 248</span>
+              <span style="color:var(--red);font-size:0.84rem;">(과거 한강맨션 상가 내 중식당 — 현재 폐업하여 타 업종 매장 입점)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val" style="color:var(--text-muted);">미운영 (과거 02-794-6444 · 현재 폐업)</div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val" style="color:var(--text-muted);">해당 없음 (영업 종료)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
+            <div class="info-val" style="color:var(--text-muted);">현재 영업 종료로 가격 확인 불가 (네이버 플레이스 등록 매장 없음)</div>
+          </div>
         </div>
+
+        <div class="action-bar">
+          <span class="btn btn-disabled">📍 네이버 플레이스 없음 (폐업)</span>
+          <button class="btn copy-btn" type="button" data-copy="서울 용산구 이촌로 248">📋 구 주소 복사</button>
+        </div>
+
         <ul class="details">
-          <li><strong>참고 사항:</strong> 이미지에는 서울 용산구 이촌로 248의 한강춘이 표기되어 있으나, 해당 주소 인근에서는 중화요리 관련 업장으로 동강, 차이옌, 취원 등이 확인되며 한강춘의 상세 리뷰 데이터는 확인되지 않았습니다.</li>
+          <li><strong>현황 확인:</strong> 과거 동부이촌동 한강맨션 상가에 있던 중식당 한강춘은 <strong>폐업</strong>하여 네이버 플레이스에서 조회되지 않습니다. *(동명 업장인 이촌로75길 '한강춘축산'은 정육점으로 별개 업체입니다.)*</li>
+          <li><strong>인근 참고:</strong> 해당 주소 인근에서는 중화요리 관련 업장으로 동강, 차이옌, 취원 등이 확인됩니다.</li>
         </ul>
       </article>
 
       <!-- 4. 안동장 -->
-      <article class="card" data-region="seoul" data-search="안동장 서울 중구 을지로 124 노포 웨이팅 탕수육 짬뽕 짜장면 굴짬뽕 바삭">
+      <article id="place-4" class="card" data-region="seoul" data-parking="no" data-search="안동장 서울 중구 을지로 124 02-2266-3814 주차불가 30000 굴짬뽕 13000 짜장면 9000 노포">
         <div class="card-header">
           <div class="title-group">
             <span class="num">04</span>
@@ -439,44 +737,99 @@
           </div>
           <div class="badges">
             <span class="badge">서울 중구</span>
+            <span class="badge park-no">🅿️ 주차 불가</span>
           </div>
         </div>
-        <div class="address-row">
-          <span class="address-text">📍 서울 중구 을지로 124</span>
-          <button class="btn-mini copy-btn" type="button" data-copy="서울 중구 을지로 124">주소 복사</button>
-          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%EC%9E%A5%20%EC%84%9C%EC%9A%B8%20%EC%A4%91%EA%B5%AC%20%EC%9D%84%EC%A7%80%EB%A1%9C%20124" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>서울 중구 을지로 124</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(을지로3가 315-1 · 을지로3가역 10번 출구 직진 50m)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val"><a class="tel-link" href="tel:02-2266-3814">02-2266-3814</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">주차 불가 (전용 주차장 없음 · 인근 유료 주차장 이용 필요)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
+            <div class="info-val">
+              <span class="price-highlight">탕수육/고기튀김(대) 30,000원 · 쇠고기/사천탕수육(대) 40,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 9,000원 · 간짜장 11,000원 · 짬뽕 11,000원 · 삼선짬뽕 12,000원 · 굴짬뽕/매운굴짬뽕 13,000원 · 군만두 9,000원</span>
+            </div>
+          </div>
         </div>
-        <p class="intro">서울 중구 을지로에 위치한 유서 깊은 중식당입니다.</p>
+
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/11677524" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="서울 중구 을지로 124">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:02-2266-3814">📞 전화 걸기</a>
+        </div>
+
         <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 오랜 역사를 지닌 노포 특유의 정겨운 분위기가 있으며, 식사 시간대에는 웨이팅이 발생할 수 있습니다.</li>
-          <li><strong>리뷰 요약:</strong> 방문객들은 탕수육과 짬뽕, 짜장면 등 기본기의 탄탄함과 푸짐한 양을 높이 평가합니다. 특히 겨울철 굴짬뽕과 바삭한 식감의 탕수육에 대한 만족도가 높습니다.</li>
+          <li><strong>분위기 및 특징:</strong> 1948년 개업한 유서 깊은 노포 특유의 정겨운 분위기가 있으며, 식사 시간대에는 웨이팅이 발생할 수 있습니다.</li>
+          <li><strong>리뷰 요약:</strong> 탕수육·짬뽕·짜장면 등 기본기의 탄탄함과 푸짐한 양이 강점이며, 특히 원조 굴짬뽕과 바삭한 식감의 탕수육 만족도가 높습니다.</li>
         </ul>
       </article>
 
       <!-- 5. 신승반점 -->
-      <article class="card" data-region="incheon" data-search="신승반점 新勝飯店 인천 중구 차이나타운로44번길 31-3 짜장면 짬뽕 탕수육 쫄깃">
+      <article id="place-5" class="card" data-region="incheon" data-parking="no" data-search="신승반점 新勝飯店 인천 중구 제물포구 차이나타운로44번길 31-3 032-762-9467 공영주차장 찹쌀탕수육 30000 45000 유니짜장">
         <div class="card-header">
           <div class="title-group">
             <span class="num">05</span>
-            <h2>신승반점 <span class="hanja">(新勝飯店)</span></h2>
+            <h2>신승반점 <span class="subname">(新勝飯店 · 본점)</span></h2>
           </div>
           <div class="badges">
-            <span class="badge">인천 중구</span>
+            <span class="badge">인천 차이나타운</span>
+            <span class="badge park-no">🅿️ 전용 주차 불가</span>
           </div>
         </div>
-        <div class="address-row">
-          <span class="address-text">📍 인천 중구 차이나타운로44번길 31-3</span>
-          <button class="btn-mini copy-btn" type="button" data-copy="인천 중구 차이나타운로44번길 31-3">주소 복사</button>
-          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%8B%A0%EC%8A%B9%EB%B0%98%EC%A0%90%20%EC%B0%A8%EC%9D%B4%EB%82%98%ED%83%80%EC%9A%B4" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>인천 중구 차이나타운로44번길 31-3</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(북성동2가 11-31 · 네이버 지도 표기: 인천 제물포구 차이나타운로44번길 31-3)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val"><a class="tel-link" href="tel:032-762-9467">032-762-9467</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">전용 주차장 없음 (인근 차이나타운 공영주차장 / 동화마을 공영주차장 이용)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
+            <div class="info-val">
+              <span class="price-highlight">찹쌀탕수육 (소) 30,000원 · (대) 45,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 유니짜장면 11,500원 · 일반 자장면 7,000~8,500원대 · 간자장/짬뽕/백짬뽕 10,000원대 · 사천식 탕수육 소 34,000원/대 46,000원</span>
+            </div>
+          </div>
         </div>
+
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/11887658" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="인천 중구 차이나타운로44번길 31-3">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:032-762-9467">📞 전화 걸기</a>
+        </div>
+
         <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 차이나타운 특유의 활기찬 분위기 속에서 식사할 수 있으며, 관광객과 단체 방문객이 많이 찾습니다.</li>
-          <li><strong>리뷰 요약:</strong> 탕수육과 짜장면, 짬뽕 등의 맛이 전반적으로 준수하고 양이 넉넉하다는 평이 많습니다. 쫄깃한 식감과 소스의 조화를 좋아하는 방문객들이 자주 언급하며, 인기 시간대에는 대기 시간이 생길 수 있습니다.</li>
+          <li><strong>분위기 및 특징:</strong> 차이나타운 특유의 활기찬 분위기로 관광객·단체 방문객이 많으며, 인기 시간대에는 대기 시간이 생길 수 있습니다.</li>
+          <li><strong>리뷰 요약:</strong> 탕수육과 유니짜장, 짬뽕의 전반적인 맛과 넉넉한 양이 호평받으며 찹쌀 탕수육의 쫄깃한 식감과 소스 조화가 자주 언급됩니다.</li>
         </ul>
       </article>
 
       <!-- 6. 송학반점 -->
-      <article class="card" data-region="etc" data-search="송학반점 충북 제천시 의병대로12길 7 명동 월요일 휴무 동네 중식당">
+      <article id="place-6" class="card" data-region="etc" data-parking="no" data-search="송학반점 충북 제천시 의병대로12길 7 043-646-2038 공영주차장 28000 돼지갈비 38000 짜장면 7000">
         <div class="card-header">
           <div class="title-group">
             <span class="num">06</span>
@@ -484,21 +837,49 @@
           </div>
           <div class="badges">
             <span class="badge">충북 제천</span>
+            <span class="badge park-no">🅿️ 전용 주차 없음</span>
           </div>
         </div>
-        <div class="address-row">
-          <span class="address-text">📍 충북 제천시 의병대로12길 7 인근 명동 일대</span>
-          <button class="btn-mini copy-btn" type="button" data-copy="충북 제천시 의병대로12길 7">주소 복사</button>
-          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%86%A1%ED%95%99%EB%B0%98%EC%A0%90%20%EC%A0%9C%EC%B2%9C" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>충북 제천시 의병대로12길 7</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(명동 140 · 월요일 휴무, 점심·저녁 운영)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val"><a class="tel-link" href="tel:043-646-2038">043-646-2038</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">전용 주차장 없음 (인근 제천 중앙시장 등 공영주차장 / 주변 골목 이용)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
+            <div class="info-val">
+              <span class="price-highlight">탕수육 28,000원 · 돼지갈비(튀김) 38,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 7,000원 · 간짜장 9,000원 · 짬뽕 9,000원 · 짜장밥 9,000원 · 짬뽕밥/잡채밥 10,000원 · 깐풍기 34,000원</span>
+            </div>
+          </div>
         </div>
+
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/17599335" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="충북 제천시 의병대로12길 7">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:043-646-2038">📞 전화 걸기</a>
+        </div>
+
         <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 부담 없이 식사하기 좋은 캐주얼한 분위기의 지역 중식당으로, 월요일은 휴무이며 점심·저녁 시간대에 운영합니다.</li>
-          <li><strong>리뷰 요약:</strong> 지역 방문객들이 찾는 동네 중식당으로, 별도의 상세 후기 텍스트는 많지 않으나 식사 메뉴 위주로 이용됩니다.</li>
+          <li><strong>분위기 및 특징:</strong> 부담 없이 식사하기 좋은 캐주얼한 분위기의 지역 중식당으로 월요일은 휴무입니다.</li>
+          <li><strong>리뷰 요약:</strong> 지역 방문객들이 찾는 동네 중식당으로, 별도의 상세 후기 텍스트는 많지 않으나 식사 메뉴와 튀김류 위주로 이용됩니다.</li>
         </ul>
       </article>
 
       <!-- 7. 옥성반점 -->
-      <article class="card" data-region="etc" data-search="옥성반점 부산 중구 보수북길 14 원도심 골목 상권">
+      <article id="place-7" class="card" data-region="etc" data-parking="no" data-search="옥성반점 부산 중구 보수북길 14 0507-1308-0473 051-241-0473 주차불가 미니탕수육 12000 간짜장 8000">
         <div class="card-header">
           <div class="title-group">
             <span class="num">07</span>
@@ -506,16 +887,47 @@
           </div>
           <div class="badges">
             <span class="badge">부산 중구</span>
+            <span class="badge park-no">🅿️ 주차 불가</span>
           </div>
         </div>
-        <div class="address-row">
-          <span class="address-text">📍 부산 중구 보수북길 14</span>
-          <button class="btn-mini copy-btn" type="button" data-copy="부산 중구 보수북길 14">주소 복사</button>
-          <a class="btn-mini" href="https://map.naver.com/p/search/%EC%98%A5%EC%84%B1%EB%B0%98%EC%A0%90%20%EB%B6%80%EC%82%B0%20%EC%A4%91%EA%B5%AC%20%EB%B3%B4%EC%88%98%EB%B6%81%EA%B8%B8%2014" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>
+
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>부산 중구 보수북길 14 1층</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(보수동1가 27-1 · 화요일 정기휴무)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val">
+              <a class="tel-link" href="tel:0507-1308-0473">0507-1308-0473</a>
+              <span style="color:var(--text-dim);font-size:0.82rem;">(유선 051-241-0473)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">주차 불가 (매장 전용 주차장 없음 · 인근 유료/공영 주차장 또는 골목 이용)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
+            <div class="info-val">
+              <span class="price-highlight">미니탕수육 12,000원 · 소 20,000원대 (방문 후기 기준, 변동 가능)</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 7,000원 · 우동 7,000원 · 간짜장 8,000원 · 짬뽕 8,000원 · 울면 8,000원 · 볶음밥 8,000원 · 군만두 8,000원</span>
+            </div>
+          </div>
         </div>
+
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/1067469174" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="부산 중구 보수북길 14">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:0507-1308-0473">📞 전화 걸기</a>
+        </div>
+
         <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 골목 상권 내 소규모로 운영되는 캐주얼한 중식당으로, 점심과 저녁 식사 손님이 주로 찾습니다.</li>
-          <li><strong>리뷰 요약:</strong> 부산 원도심에서 정겨운 중화요리를 맛볼 수 있는 곳으로 언급되며, 상세 리뷰 항목은 제한적입니다.</li>
+          <li><strong>분위기 및 특징:</strong> 골목 상권 내 소규모로 운영되는 캐주얼한 중식당으로 점심·저녁 식사 손님이 주로 찾습니다.</li>
+          <li><strong>리뷰 요약:</strong> 부산 원도심에서 정겨운 중화요리를 맛볼 수 있는 곳으로, 식사류와 곁들이기 좋은 미니탕수육 등이 언급됩니다.</li>
         </ul>
       </article>
     </main>
@@ -525,7 +937,8 @@
     </div>
 
     <footer>
-      전달된 요약 데이터 기준 정적 공유 페이지 · dk-public-projects/s
+      실제 네이버 플레이스 ID 검증 및 메뉴·주차 정보 반영 · dk-public-projects/s<br>
+      ※ 가격·영업시간·주차 기준은 방문 시점 및 매장 사정에 따라 변경될 수 있으니 방문 전 플레이스 페이지 또는 유선 확인을 권장합니다.
     </footer>
   </div>
 
@@ -537,7 +950,7 @@
     const cards = Array.from(document.querySelectorAll('.card'));
     const emptyState = document.getElementById('emptyState');
     const toast = document.getElementById('toast');
-    let activeRegion = 'all';
+    let activeFilter = 'all';
     let toastTimer = null;
 
     function applyFilter() {
@@ -545,10 +958,15 @@
       let visibleCount = 0;
 
       cards.forEach((card) => {
-        const regionMatch = activeRegion === 'all' || card.dataset.region === activeRegion;
+        let filterMatch = true;
+        if (activeFilter === 'park-ok') {
+          filterMatch = card.dataset.parking === 'yes';
+        } else if (activeFilter !== 'all') {
+          filterMatch = card.dataset.region === activeFilter;
+        }
         const text = (card.dataset.search + ' ' + card.textContent).toLowerCase();
         const queryMatch = !q || text.includes(q);
-        const show = regionMatch && queryMatch;
+        const show = filterMatch && queryMatch;
         card.style.display = show ? '' : 'none';
         if (show) visibleCount += 1;
       });
@@ -560,7 +978,7 @@
       pill.addEventListener('click', () => {
         pills.forEach((p) => p.classList.remove('active'));
         pill.classList.add('active');
-        activeRegion = pill.dataset.region;
+        activeFilter = pill.dataset.filter;
         applyFilter();
       });
     });
@@ -571,7 +989,7 @@
       toast.textContent = msg;
       toast.classList.add('show');
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
     }
 
     document.querySelectorAll('.copy-btn').forEach((btn) => {
@@ -579,7 +997,7 @@
         const text = btn.dataset.copy;
         try {
           await navigator.clipboard.writeText(text);
-          showToast('주소가 복사되었습니다: ' + text);
+          showToast('네비 주소 복사 완료: ' + text);
         } catch {
           showToast('복사에 실패했습니다. 직접 선택해 복사해 주세요.');
         }
