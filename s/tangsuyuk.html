@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>탕수육 맛집 15곳 가이드 — 플레이스·네비 주소·주차·메뉴 가격</title>
+  <title>수도권 아점 · 하행선 경유 중식 맛집 9곳 가이드</title>
   <style>
     :root {
       --bg: #080c14;
@@ -22,12 +22,10 @@
       --cyan-soft: rgba(0, 210, 255, 0.1);
       --green: #10b981;
       --green-soft: rgba(16, 185, 129, 0.14);
-      --red: #f87171;
-      --red-soft: rgba(248, 113, 113, 0.14);
       --amber: #fb923c;
       --amber-soft: rgba(251, 146, 60, 0.14);
       --purple: #c084fc;
-      --purple-soft: rgba(192, 132, 252, 0.13);
+      --purple-soft: rgba(192, 132, 252, 0.14);
       --radius: 16px;
     }
 
@@ -70,7 +68,7 @@
     }
 
     h1 {
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-size: clamp(1.55rem, 4vw, 2.15rem);
       font-weight: 800;
       letter-spacing: -0.02em;
       line-height: 1.25;
@@ -114,7 +112,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 0.84rem;
-      min-width: 780px;
+      min-width: 820px;
     }
 
     .summary-table th {
@@ -209,6 +207,23 @@
     .search-box input::placeholder { color: var(--text-dim); }
     .search-box input:focus { border-color: var(--cyan); }
 
+    /* Section Divider */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 26px 0 14px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .section-label span.line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
     /* Cards */
     .grid {
       display: grid;
@@ -230,13 +245,8 @@
       border-color: rgba(255, 255, 255, 0.16);
     }
 
-    .card.is-closed {
-      border-color: rgba(248, 113, 113, 0.3);
-      opacity: 0.88;
-    }
-
-    .card.is-moved {
-      border-color: rgba(192, 132, 252, 0.32);
+    .card.is-corrected {
+      border-color: rgba(192, 132, 252, 0.3);
     }
 
     .card-header {
@@ -294,10 +304,16 @@
       white-space: nowrap;
     }
 
-    .badge.tag-gold {
+    .badge.cond1 {
       background: var(--gold-soft);
       color: var(--gold);
       border-color: rgba(245, 200, 66, 0.28);
+    }
+
+    .badge.cond2 {
+      background: var(--purple-soft);
+      color: var(--purple);
+      border-color: rgba(192, 132, 252, 0.32);
     }
 
     .badge.park-ok {
@@ -306,22 +322,16 @@
       border-color: rgba(16, 185, 129, 0.3);
     }
 
-    .badge.park-no {
+    .badge.park-pub {
       background: var(--amber-soft);
       color: var(--amber);
       border-color: rgba(251, 146, 60, 0.3);
     }
 
-    .badge.moved {
-      background: var(--purple-soft);
-      color: var(--purple);
-      border-color: rgba(192, 132, 252, 0.32);
-    }
-
-    .badge.closed {
-      background: var(--red-soft);
-      color: var(--red);
-      border-color: rgba(248, 113, 113, 0.35);
+    .badge.time {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.14);
     }
 
     /* Info Box */
@@ -376,6 +386,22 @@
       font-weight: 700;
     }
 
+    .menu-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      color: #e2e8f0;
+    }
+
     .action-bar {
       display: flex;
       flex-wrap: wrap;
@@ -414,12 +440,6 @@
       background: rgba(3, 199, 90, 0.26);
       border-color: rgba(3, 199, 90, 0.6);
       color: #6ee7b7;
-    }
-
-    .btn-disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-      pointer-events: none;
     }
 
     .details {
@@ -502,148 +522,110 @@
 <body>
   <div class="container">
     <header class="hero">
-      <div class="eyebrow">🥢 외부 공유 페이지 · 네이버 플레이스 검증판 (총 15곳)</div>
-      <h1>전국 탕수육 맛집 15곳 가이드</h1>
-      <p class="subtitle">실제 가게 페이지(네이버 플레이스 직통 링크), 네비 도로명 주소, 전화번호, 주차 가능 여부, 기본 메뉴·탕수육 가격 및 이전·폐업 현황 반영</p>
+      <div class="eyebrow">🚗 외부 공유 페이지 · 수도권 아점 &amp; 영광 하행선 경유지 (9곳)</div>
+      <h1>중식 · 탕수육 맛집 동선 가이드</h1>
+      <p class="subtitle">조건 1(수도권 아점 7곳) · 조건 2(하행 중간 경유지 2곳) — 네이버 플레이스 고정 링크, 실주소·번호 보정, 오픈 시간, 주차 및 메뉴 가격 반영</p>
     </header>
 
     <!-- 한눈에 보는 요약표 -->
     <section class="summary-wrap" aria-label="한눈에 보는 비교표">
       <div class="summary-title">
-        <span>📋 한눈에 보기 (15곳 통합 · 송학반점 중복 통합 반영)</span>
-        <span class="summary-note">※ 메뉴 가격·영업 상태는 2026.11 네이버 플레이스 검증 기준이며 매장 사정에 따라 변동될 수 있습니다.</span>
+        <span>📋 한눈에 보기 (9곳 전체)</span>
+        <span class="summary-note">※ 2026.11 네이버 플레이스 검증 반영 (대가방 본점·고등반점 주소 및 영빈루 번호 현행화)</span>
       </div>
       <table class="summary-table">
         <thead>
           <tr>
+            <th>구분</th>
             <th>상호</th>
             <th>지역</th>
+            <th>오픈</th>
             <th>주차</th>
-            <th>탕수육 가격대</th>
-            <th>기본 식사(짜장·짬뽕)</th>
+            <th>탕수육 · 대표 가격</th>
             <th>가게 페이지</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><a class="row-link" href="#place-1">1. 모던눌랑 센트럴시티점</a></td>
-            <td>서울 서초</td>
-            <td><span class="badge park-ok">가능 (금액별 지원)</span></td>
-            <td>40,000원 / 소고기 65,000원</td>
-            <td>자장 18,000 / 짬뽕 20,000~</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/37086581" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+            <td><span class="badge cond1">조건1</span></td>
+            <td><a class="row-link" href="#place-1">1. 연경 본관</a></td>
+            <td>인천 차이나타운</td>
+            <td>10:30</td>
+            <td><span class="badge park-ok">주차타워·발렛</span></td>
+            <td>찹쌀탕수육 28,000 / 하얀짜장 10,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/13508698" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
           </tr>
           <tr>
-            <td><a class="row-link" href="#place-2">2. 외래향 서울대점</a></td>
-            <td>서울 관악</td>
-            <td><span class="badge park-ok">가능 (타워/1시간)</span></td>
-            <td>小 28,000원 (매운/달콤)</td>
-            <td>짜장 10,000 / 삼선짬뽕 12,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/37770452" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+            <td><span class="badge cond1">조건1</span></td>
+            <td><a class="row-link" href="#place-2">2. 송쉐프 신사본점</a></td>
+            <td>서울 강남 신사</td>
+            <td>11:30</td>
+            <td><span class="badge park-ok">가능 (발렛)</span></td>
+            <td>육즙탕수육 35,000 / 볶음밥 12,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/1116542324" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
           </tr>
           <tr>
-            <td><a class="row-link" href="#place-3">3. 한강춘</a></td>
-            <td>서울 용산</td>
-            <td><span class="badge closed">폐업 확인</span></td>
-            <td>확인 불가 (영업 종료)</td>
-            <td>확인 불가</td>
-            <td><span style="color:var(--red);font-size:0.8rem;">미등록 (폐업)</span></td>
-          </tr>
-          <tr>
-            <td><a class="row-link" href="#place-4">4. 안동장</a></td>
-            <td>서울 중구</td>
-            <td><span class="badge park-no">불가 (인근 유료)</span></td>
-            <td>대 30,000원 / 쇠고기·사천 40,000원</td>
-            <td>짜장 9,000 / 굴짬뽕 13,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/11677524" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
-          </tr>
-          <tr>
-            <td><a class="row-link" href="#place-5">5. 신승반점</a></td>
-            <td>인천 중구</td>
-            <td><span class="badge park-no">불가 (공영주차장)</span></td>
-            <td>찹쌀 소 30,000 / 대 45,000원</td>
-            <td>유니짜장 11,500 / 짬뽕 10,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/11887658" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
-          </tr>
-          <tr>
-            <td><a class="row-link" href="#place-6">6. 송학반점</a></td>
-            <td>충북 제천</td>
-            <td><span class="badge park-no">전용 없음 (공영/골목)</span></td>
-            <td>28,000원 (돼지갈비 38,000원)</td>
-            <td>짜장 7,000 / 짬뽕 9,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/17599335" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
-          </tr>
-          <tr>
-            <td><a class="row-link" href="#place-7">7. 옥성반점</a></td>
-            <td>부산 중구</td>
-            <td><span class="badge park-no">불가 (인근 유료/골목)</span></td>
-            <td>미니 12,000 / 소 20,000원대(참고)</td>
-            <td>짜장 7,000 / 간짜장·짬뽕 8,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/1067469174" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
-          </tr>
-          <tr>
-            <td><a class="row-link" href="#place-8">8. 대가방 본점</a></td>
-            <td>서울 강남</td>
-            <td><span class="badge park-ok">가능 (주차/발렛)</span></td>
-            <td>돼지 33,000원 / 소고기 70,000원</td>
-            <td>대가탕면·해물짬뽕 13,000</td>
+            <td><span class="badge cond1">조건1</span></td>
+            <td><a class="row-link" href="#place-3">3. 대가방 본점</a></td>
+            <td>서울 강남 논현</td>
+            <td>11:30</td>
+            <td><span class="badge park-ok">주차·발렛</span></td>
+            <td>돼지탕수육 33,000 / 대가탕면 13,000</td>
             <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/11839623" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
           </tr>
           <tr>
-            <td><a class="row-link" href="#place-9">9. 주 (朱)</a></td>
-            <td>서울 서초</td>
-            <td><span class="badge park-no">매우 협소 (인근 유료)</span></td>
-            <td>33,000원</td>
-            <td>짜장 ~9,000 / 삼선짬뽕 ~12,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/13371755" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+            <td><span class="badge cond1">조건1</span></td>
+            <td><a class="row-link" href="#place-4">4. 동흥관</a></td>
+            <td>서울 금천</td>
+            <td>11:00</td>
+            <td><span class="badge park-ok">전용 무료</span></td>
+            <td>탕수육(중) 26,000 / 짜장 8,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/18525138" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
           </tr>
           <tr>
-            <td><a class="row-link" href="#place-10">10. 명화원</a></td>
-            <td>서울 용산</td>
-            <td><span class="badge park-no">불가 (전쟁기념관 등)</span></td>
-            <td>中 20,000원 / 大 30,000원</td>
-            <td>자장 7,000 / 짬뽕 8,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/11679883" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+            <td><span class="badge cond1">조건1</span></td>
+            <td><a class="row-link" href="#place-5">5. 락희안 목동직영점</a></td>
+            <td>서울 양천 목동</td>
+            <td>11:30</td>
+            <td><span class="badge park-ok">건물/기계식</span></td>
+            <td>대파꿔바로우(소) 30,000 / 옛날짜장 8,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/1538683609" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
           </tr>
           <tr>
-            <td><a class="row-link" href="#place-11">11. 도원·S (구 더 플라자 도원)</a></td>
-            <td>서울 종로</td>
-            <td><span class="badge park-ok">가능 (빌딩 주차 지원)</span></td>
-            <td>코스 14~50만원대 (광화문 이전)</td>
-            <td>모둠딤섬 40,000 / 단품 별도 문의</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/2077704429" target="_blank" rel="noopener noreferrer">도원S ↗</a></td>
+            <td><span class="badge cond1">조건1</span></td>
+            <td><a class="row-link" href="#place-6">6. 고등반점</a></td>
+            <td>경기 수원 팔달</td>
+            <td>11:00</td>
+            <td><span class="badge park-ok">단독 지상주차</span></td>
+            <td>탕수육(中) 22,000 / 짜장 7,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/18149318" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
           </tr>
           <tr>
-            <td><a class="row-link" href="#place-12">12. 일일향 압구정본점</a></td>
-            <td>서울 강남</td>
-            <td><span class="badge park-ok">가능 (발렛 5,000원)</span></td>
-            <td>원조 육즙탕수육 38,000원</td>
-            <td>삼선간짜장 12,000 / 불맛짬뽕 11,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/11707317" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+            <td><span class="badge cond1">조건1</span></td>
+            <td><a class="row-link" href="#place-7">7. 영빈루 본점</a></td>
+            <td>경기 평택 송탄</td>
+            <td>10:00</td>
+            <td><span class="badge park-ok">주차 등록</span></td>
+            <td>탕수육 소 13,000·대 25,000 / 짬뽕 8,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/1791141920" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
           </tr>
           <tr>
-            <td><a class="row-link" href="#place-13">13. 친니</a></td>
-            <td>서울 종로</td>
-            <td><span class="badge park-ok">가능 (세종로 2h 할인)</span></td>
-            <td>35,000원</td>
-            <td>친니짜장 11,000 / 굴탕면 17,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/36523570" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+            <td><span class="badge cond2">조건2</span></td>
+            <td><a class="row-link" href="#place-8">8. 지린성</a></td>
+            <td>전북 군산</td>
+            <td>09:30</td>
+            <td><span class="badge park-pub">맞은편 공영무료</span></td>
+            <td>고추짜장·고추짬뽕 13,000 (식사 전문)</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/17150328" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
           </tr>
           <tr>
-            <td><a class="row-link" href="#place-14">14. 진태원</a></td>
-            <td>강원 평창</td>
-            <td><span class="badge park-no">전용 없음 (옆 공용무료)</span></td>
-            <td>중 32,000원 / 대 40,000원</td>
-            <td>짜장 7,000 / 짬뽕 8,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/11845634" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
-          </tr>
-          <tr>
-            <td><a class="row-link" href="#place-15">15. 금문도</a></td>
-            <td>인천 강화</td>
-            <td><span class="badge park-ok">가능 (1,500평 무료)</span></td>
-            <td>강화 순무 탕수육 25,000원</td>
-            <td>짜장 7,000 / 속노랑간짜장 12,000</td>
-            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/19714755" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
+            <td><span class="badge cond2">조건2</span></td>
+            <td><a class="row-link" href="#place-9">9. 동해원</a></td>
+            <td>충남 공주</td>
+            <td>11:00</td>
+            <td><span class="badge park-ok">전용 주차장</span></td>
+            <td>탕수육 소 17,000·중 28,000 / 짬뽕 11,000</td>
+            <td><a class="table-place-link" href="https://map.naver.com/p/entry/place/21037635" target="_blank" rel="noopener noreferrer">플레이스 ↗</a></td>
           </tr>
         </tbody>
       </table>
@@ -652,357 +634,85 @@
     <!-- 필터 및 검색 -->
     <section class="controls" aria-label="필터 및 검색">
       <div class="filter-pills" role="tablist">
-        <button class="pill active" data-filter="all" type="button">전체 (15)</button>
-        <button class="pill" data-filter="park-ok" type="button">주차 가능 (7)</button>
-        <button class="pill" data-filter="seoul" type="button">서울 (10)</button>
-        <button class="pill" data-filter="incheon" type="button">인천 · 강화 (2)</button>
-        <button class="pill" data-filter="etc" type="button">강원 · 충북 · 부산 (3)</button>
+        <button class="pill active" data-filter="all" type="button">전체 (9)</button>
+        <button class="pill" data-filter="cond1" type="button">조건1 · 수도권 아점 (7)</button>
+        <button class="pill" data-filter="cond2" type="button">조건2 · 경유지 점심 (2)</button>
+        <button class="pill" data-filter="early" type="button">10:30 이전 오픈 (3)</button>
       </div>
       <div class="search-box">
-        <input id="searchInput" type="search" placeholder="상호, 주소, 메뉴, 주차 검색..." aria-label="맛집 검색">
+        <input id="searchInput" type="search" placeholder="상호, 지역, 메뉴, 주차 검색..." aria-label="맛집 검색">
       </div>
     </section>
 
     <main class="grid" id="cardGrid">
-      <!-- 1. 모던눌랑 -->
-      <article id="place-1" class="card" data-region="seoul" data-parking="yes" data-search="모던눌랑 센트럴시티점 서울 서초구 사평대로 205 주차가능 신세계 파미에 02-6282-5005 40000 65000 동파육">
+      <!-- 1. 연경 -->
+      <article id="place-1" class="card" data-cond="cond1" data-early="yes" data-search="연경 인천 차이나타운 차이나타운로 41 0507-1389-7894 032-765-7888 10:30 주차타워 발렛 하얀짜장 찹쌀탕수육 멘보샤 삼선짬뽕">
         <div class="card-header">
           <div class="title-group">
             <span class="num">01</span>
-            <h2>모던눌랑 <span class="subname">센트럴시티점</span></h2>
+            <h2>연경 <span class="subname">(차이나타운 본관)</span></h2>
           </div>
           <div class="badges">
-            <span class="badge">서울 서초</span>
-            <span class="badge park-ok">🅿️ 주차 가능</span>
+            <span class="badge cond1">조건1 · 수도권 아점</span>
+            <span class="badge">인천 차이나타운</span>
+            <span class="badge time">⏰ 오픈 10:30</span>
+            <span class="badge park-ok">🅿️ 주차타워 · 무료 발렛</span>
           </div>
         </div>
         <div class="info-grid">
           <div class="info-item full">
             <span class="info-label">실제 네비 주소</span>
             <div class="info-val">
-              <span>서울 서초구 사평대로 205</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(반포동 118-3, 센트럴시티 외부 대로변 단독 건물 · 고속터미널역 3번 출구 70m)</span>
+              <span>인천 중구 차이나타운로 41</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(네이버 지도 행정개편 표기: 인천 제물포구 차이나타운로 41)</span>
             </div>
           </div>
           <div class="info-item">
             <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:02-6282-5005">02-6282-5005</a></div>
+            <div class="info-val">
+              <a class="tel-link" href="tel:0507-1389-7894">0507-1389-7894</a>
+              <span style="color:var(--text-dim);font-size:0.82rem;">(유선 032-765-7888)</span>
+            </div>
           </div>
           <div class="info-item">
             <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">가능 (신세계 센트럴·파미에 주차장 · 5만원↑ 1시간 / 10만원↑ 2시간 / 15만원↑ 3시간 무료, 초과 10분당 1,000원)</div>
+            <div class="info-val">가능 (자체 전용 주차타워·무료 발렛 지원, 주말 만차 시 인근 공영주차장 이용)</div>
           </div>
           <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
+            <span class="info-label">인기 메뉴 &amp; 가격대</span>
             <div class="info-val">
-              <span class="price-highlight">탕수육 40,000원 · 소고기 탕수육 65,000원 · 생표고 탕수 33,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| XO소스 자장면 18,000원 · 고기 짬뽕 20,000원 · 해물 짬뽕 21,000원 · 양주식 볶음밥 19,000원 · 유린기/고추깐풍기 40,000원 · 동파육 with Buns 50,000원</span>
+              <span class="price-highlight">찹쌀탕수육 28,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 하얀짜장 10,000원 · 짜장면 9,000원 · 삼선전복짬뽕 / 전복백짬뽕 13,000원 · 샤오롱바오 / 마라교자 10,000원 · 깐쇼중새우 40,000원</span>
+            </div>
+            <div class="menu-chips">
+              <span class="chip">하얀짜장</span>
+              <span class="chip">찹쌀탕수육</span>
+              <span class="chip">멘보샤</span>
+              <span class="chip">삼선짬뽕</span>
             </div>
           </div>
         </div>
         <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/37086581" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="서울 서초구 사평대로 205">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:02-6282-5005">📞 전화 걸기</a>
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/13508698" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="인천 중구 차이나타운로 41">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:0507-1389-7894">📞 전화 걸기</a>
         </div>
         <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 상하이 스타일의 세련·트렌디한 분위기에서 서양식 소스 감각이 더해진 중화요리를 선보이며, 주류 및 디저트 구색을 갖추고 있습니다.</li>
-          <li><strong>리뷰 요약:</strong> 독특한 메뉴 구성과 프레젠테이션, 동파육 등 요리 맛에 대한 호평이 많습니다. 다만 피크 타임에는 음식 온도가 기대만큼 뜨겁지 않거나 응대가 다소 늦을 수 있다는 의견이 있습니다.</li>
+          <li><strong>방문 포인트 &amp; 리뷰:</strong> 오전 10시 30분 빠른 오픈으로 붐비지 않고 여유롭게 식사 가능합니다. 주차타워가 있어 차이나타운 내에서 주차가 가장 편리하며, 담백한 하얀짜장과 탕수육의 일관된 튀김 상태가 호평받습니다.</li>
         </ul>
       </article>
 
-      <!-- 2. 외래향 -->
-      <article id="place-2" class="card" data-region="seoul" data-parking="yes" data-search="외래향 서울대점 서울 관악구 남부순환로 1801 라피스빌딩 2층 02-888-1224 주차가능 28000 매운탕수육">
+      <!-- 2. 송쉐프 본점 -->
+      <article id="place-2" class="card" data-cond="cond1" data-early="no" data-search="송쉐프 본점 신사본점 서울 강남구 도산대로1길 40 02-546-1178 11:30 발렛 파킹 육즙 돼지고기 탕수육 옛날 볶음밥 어향동고 삼선짬뽕">
         <div class="card-header">
           <div class="title-group">
             <span class="num">02</span>
-            <h2>외래향 <span class="subname">서울대점</span></h2>
+            <h2>송쉐프 <span class="subname">(신사본점)</span></h2>
           </div>
           <div class="badges">
-            <span class="badge">서울 관악</span>
-            <span class="badge park-ok">🅿️ 주차 가능</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소</span>
-            <div class="info-val">
-              <span>서울 관악구 남부순환로 1801 2층 201호</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(봉천동 874-4, 라피스빌딩 2층 · 서울대입구역 5번 출구 약 190m)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:02-888-1224">02-888-1224</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">가능 (건물 내 주차타워 이용 / 만차 시 맞은편 건물 지원 안내 · 3만원 이상 결제 시 1시간 무료)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">외래향탕수육(小) 28,000원 · 탕수육(달콤)(小) 28,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 10,000원 · 삼선짬뽕/삼선하얀짬뽕 12,000원 · 삼선볶음밥 12,000원 · 잡채밥/외래향특면 13,000원 · 깐풍기/유린기/칠리새우(小) 35,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/37770452" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="서울 관악구 남부순환로 1801">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:02-888-1224">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 테이블 간 간격이 비교적 여유롭고 캐주얼한 분위기로 가족 모임이나 지인 식사에 무난합니다.</li>
-          <li><strong>리뷰 요약:</strong> 양이 넉넉하고 다양한 요리를 맛볼 수 있습니다. 매운 탕수육에 들어가는 건고추가 매우 매운 편이며, 일부 메뉴는 제공 온도가 미지근하게 느껴졌다는 후기가 있습니다.</li>
-        </ul>
-      </article>
-
-      <!-- 3. 한강춘 -->
-      <article id="place-3" class="card is-closed" data-region="seoul" data-parking="no" data-search="한강춘 서울 용산구 이촌로 248 폐업 한강맨션 동강 차이옌 취원">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">03</span>
-            <h2>한강춘 <span class="subname">이촌동 (과거 위치)</span></h2>
-          </div>
-          <div class="badges">
-            <span class="badge">서울 용산</span>
-            <span class="badge closed">⚠️ 폐업 확인 · 플레이스 미등록</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">과거 네비 주소 (영업 종료)</span>
-            <div class="info-val">
-              <span>서울 용산구 이촌로 248</span>
-              <span style="color:var(--red);font-size:0.84rem;">(과거 한강맨션 상가 내 중식당 — 현재 폐업하여 타 업종 매장 입점)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val" style="color:var(--text-muted);">미운영 (과거 02-794-6444 · 현재 폐업)</div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val" style="color:var(--text-muted);">해당 없음 (영업 종료)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val" style="color:var(--text-muted);">현재 영업 종료로 가격 확인 불가 (네이버 플레이스 등록 매장 없음)</div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <span class="btn btn-disabled">📍 네이버 플레이스 없음 (폐업)</span>
-          <button class="btn copy-btn" type="button" data-copy="서울 용산구 이촌로 248">📋 구 주소 복사</button>
-        </div>
-        <ul class="details">
-          <li><strong>현황 확인:</strong> 과거 동부이촌동 한강맨션 상가에 있던 중식당 한강춘은 <strong>폐업</strong>하여 네이버 플레이스에서 조회되지 않습니다. *(동명 업장인 이촌로75길 '한강춘축산'은 정육점으로 별개 업체입니다.)*</li>
-          <li><strong>인근 참고:</strong> 해당 주소 인근에서는 중화요리 관련 업장으로 동강, 차이옌, 취원 등이 확인됩니다.</li>
-        </ul>
-      </article>
-
-      <!-- 4. 안동장 -->
-      <article id="place-4" class="card" data-region="seoul" data-parking="no" data-search="안동장 서울 중구 을지로 124 02-2266-3814 주차불가 30000 굴짬뽕 13000 짜장면 9000 노포">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">04</span>
-            <h2>안동장</h2>
-          </div>
-          <div class="badges">
-            <span class="badge">서울 중구</span>
-            <span class="badge park-no">🅿️ 주차 불가</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소</span>
-            <div class="info-val">
-              <span>서울 중구 을지로 124</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(을지로3가 315-1 · 을지로3가역 10번 출구 직진 50m)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:02-2266-3814">02-2266-3814</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">주차 불가 (전용 주차장 없음 · 인근 유료 주차장 이용 필요)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">탕수육/고기튀김(대) 30,000원 · 쇠고기/사천탕수육(대) 40,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 9,000원 · 간짜장 11,000원 · 짬뽕 11,000원 · 삼선짬뽕 12,000원 · 굴짬뽕/매운굴짬뽕 13,000원 · 군만두 9,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/11677524" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="서울 중구 을지로 124">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:02-2266-3814">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 1948년 개업한 유서 깊은 노포 특유의 정겨운 분위기가 있으며, 식사 시간대에는 웨이팅이 발생할 수 있습니다.</li>
-          <li><strong>리뷰 요약:</strong> 탕수육·짬뽕·짜장면 등 기본기의 탄탄함과 푸짐한 양이 강점이며, 특히 원조 굴짬뽕과 바삭한 식감의 탕수육 만족도가 높습니다.</li>
-        </ul>
-      </article>
-
-      <!-- 5. 신승반점 -->
-      <article id="place-5" class="card" data-region="incheon" data-parking="no" data-search="신승반점 新勝飯店 인천 중구 제물포구 차이나타운로44번길 31-3 032-762-9467 공영주차장 찹쌀탕수육 30000 45000 유니짜장">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">05</span>
-            <h2>신승반점 <span class="subname">(新勝飯店 · 본점)</span></h2>
-          </div>
-          <div class="badges">
-            <span class="badge">인천 차이나타운</span>
-            <span class="badge park-no">🅿️ 전용 주차 불가</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소</span>
-            <div class="info-val">
-              <span>인천 중구 차이나타운로44번길 31-3</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(북성동2가 11-31 · 네이버 지도 표기: 인천 제물포구 차이나타운로44번길 31-3)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:032-762-9467">032-762-9467</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">전용 주차장 없음 (인근 차이나타운 공영주차장 / 동화마을 공영주차장 이용)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">찹쌀탕수육 (소) 30,000원 · (대) 45,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 유니짜장면 11,500원 · 일반 자장면 7,000~8,500원대 · 간자장/짬뽕/백짬뽕 10,000원대 · 사천식 탕수육 소 34,000원/대 46,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/11887658" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="인천 중구 차이나타운로44번길 31-3">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:032-762-9467">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 차이나타운 특유의 활기찬 분위기로 관광객·단체 방문객이 많으며, 인기 시간대에는 대기 시간이 생길 수 있습니다.</li>
-          <li><strong>리뷰 요약:</strong> 탕수육과 유니짜장, 짬뽕의 전반적인 맛과 넉넉한 양이 호평받으며 찹쌀 탕수육의 쫄깃한 식감과 소스 조화가 자주 언급됩니다.</li>
-        </ul>
-      </article>
-
-      <!-- 6. 송학반점 (기존+추가 통합) -->
-      <article id="place-6" class="card" data-region="etc" data-parking="no" data-search="송학반점 충북 제천시 의병대로12길 7 043-646-2038 공영주차장 28000 돼지갈비 38000 짜장면 7000 충청 노포 명가">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">06</span>
-            <h2>송학반점</h2>
-          </div>
-          <div class="badges">
-            <span class="badge tag-gold">충청 노포 명가</span>
-            <span class="badge">충북 제천</span>
-            <span class="badge park-no">🅿️ 전용 주차 없음</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소</span>
-            <div class="info-val">
-              <span>충북 제천시 의병대로12길 7</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(명동 140 · 월요일 휴무, 점심·저녁 운영)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:043-646-2038">043-646-2038</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">전용 주차장 없음 (인근 제천 중앙시장 등 공영주차장 / 주변 골목 이용)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">탕수육 28,000원 · 돼지갈비(튀김) 38,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 7,000원 · 간짜장 9,000원 · 짬뽕 9,000원 · 짜장밥 9,000원 · 짬뽕밥/잡채밥 10,000원 · 깐풍기 34,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/17599335" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="충북 제천시 의병대로12길 7">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:043-646-2038">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 고전적인 옛날 탕수육 방식과 고소한 튀김 공력을 느낄 수 있는 오랜 전통의 화상 중식당으로 월요일은 휴무입니다.</li>
-          <li><strong>리뷰 요약:</strong> 부담 없이 식사하기 좋은 캐주얼한 동네·지역 명가로, 탕수육·돼지갈비 튀김과 기본 식사 메뉴가 꾸준히 이용됩니다.</li>
-        </ul>
-      </article>
-
-      <!-- 7. 옥성반점 -->
-      <article id="place-7" class="card" data-region="etc" data-parking="no" data-search="옥성반점 부산 중구 보수북길 14 0507-1308-0473 051-241-0473 주차불가 미니탕수육 12000 간짜장 8000">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">07</span>
-            <h2>옥성반점</h2>
-          </div>
-          <div class="badges">
-            <span class="badge">부산 중구</span>
-            <span class="badge park-no">🅿️ 주차 불가</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소</span>
-            <div class="info-val">
-              <span>부산 중구 보수북길 14 1층</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(보수동1가 27-1 · 화요일 정기휴무)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val">
-              <a class="tel-link" href="tel:0507-1308-0473">0507-1308-0473</a>
-              <span style="color:var(--text-dim);font-size:0.82rem;">(유선 051-241-0473)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">주차 불가 (매장 전용 주차장 없음 · 인근 유료/공영 주차장 또는 골목 이용)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">미니탕수육 12,000원 · 소 20,000원대 (방문 후기 기준, 변동 가능)</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 7,000원 · 우동 7,000원 · 간짜장 8,000원 · 짬뽕 8,000원 · 울면 8,000원 · 볶음밥 8,000원 · 군만두 8,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/1067469174" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="부산 중구 보수북길 14">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:0507-1308-0473">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 골목 상권 내 소규모로 운영되는 캐주얼한 중식당으로 점심·저녁 식사 손님이 주로 찾습니다.</li>
-          <li><strong>리뷰 요약:</strong> 부산 원도심에서 정겨운 중화요리를 맛볼 수 있는 곳으로, 식사류와 곁들이기 좋은 미니탕수육 등이 언급됩니다.</li>
-        </ul>
-      </article>
-
-      <!-- 8. 대가방 본점 -->
-      <article id="place-8" class="card" data-region="seoul" data-parking="yes" data-search="대가방 본점 서울 강남구 봉은사로 333 논현동 선정릉역 주차가능 발렛파킹 0507-1467-6336 02-544-6336 33000 70000 대가탕면 서울 3대 탕수육">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">08</span>
-            <h2>대가방 <span class="subname">본점</span></h2>
-          </div>
-          <div class="badges">
-            <span class="badge tag-gold">서울 3대 탕수육</span>
-            <span class="badge">서울 강남</span>
+            <span class="badge cond1">조건1 · 수도권 아점</span>
+            <span class="badge">서울 강남 신사</span>
+            <span class="badge time">⏰ 오픈 11:30</span>
             <span class="badge park-ok">🅿️ 주차 · 발렛 가능</span>
           </div>
         </div>
@@ -1010,8 +720,61 @@
           <div class="info-item full">
             <span class="info-label">실제 네비 주소</span>
             <div class="info-val">
+              <span>서울 강남구 도산대로1길 40</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val"><a class="tel-link" href="tel:02-546-1178">02-546-1178</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">가능 (발렛 파킹 지원)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">인기 메뉴 &amp; 가격대</span>
+            <div class="info-val">
+              <span class="price-highlight">육즙돼지고기탕수육 35,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 옛날볶음밥+프라이 12,000원 · 옛날짬뽕 / 삼선간짜장+프라이 13,000원 · 어향동고 55,000원 · 난자완스 53,000원</span>
+            </div>
+            <div class="menu-chips">
+              <span class="chip">육즙 돼지고기 탕수육</span>
+              <span class="chip">옛날 볶음밥+후라이</span>
+              <span class="chip">어향동고</span>
+              <span class="chip">삼선짬뽕</span>
+            </div>
+          </div>
+        </div>
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/1116542324" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="서울 강남구 도산대로1길 40">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:02-546-1178">📞 전화 걸기</a>
+        </div>
+        <ul class="details">
+          <li><strong>방문 포인트 &amp; 리뷰:</strong> 튀김옷이 얇고 고기 두께와 육즙이 꽉 찬 시그니처 탕수육 만족도가 매우 높습니다. 밥알 하나하나 코팅된 고슬고슬한 볶음밥과의 조합이 최근 후기에서도 꾸준히 추천됩니다.</li>
+        </ul>
+      </article>
+
+      <!-- 3. 대가방 본점 (주소 현행화) -->
+      <article id="place-3" class="card is-corrected" data-cond="cond1" data-early="no" data-search="대가방 본점 서울 강남구 봉은사로 333 선정릉역 논현동 0507-1467-6336 02-544-6336 11:30 발렛 대가탕수육 대가탕면 해물짬뽕 게살볶음밥">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">03</span>
+            <h2>대가방 <span class="subname">(본점 · 선정릉역 이전)</span></h2>
+          </div>
+          <div class="badges">
+            <span class="badge cond1">조건1 · 수도권 아점</span>
+            <span class="badge">서울 강남 논현</span>
+            <span class="badge time">⏰ 오픈 11:00/11:30</span>
+            <span class="badge park-ok">🅿️ 주차 · 발렛 가능</span>
+          </div>
+        </div>
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소 (최신 이전 주소 반영)</span>
+            <div class="info-val">
               <span>서울 강남구 봉은사로 333 모아엘가 퍼스트홈 1층</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(논현동 278-4 · 9호선 선정릉역 1번 출구 우측 건물 1층 · 일요일 휴무 참고)</span>
+              <span style="color:var(--purple);font-size:0.84rem;">(구 언주로148길 9에서 통합 이전 · 선정릉역 1번 출구 도보 1분 · 브레이크 15:00~17:00, 일요일 휴무 참고)</span>
             </div>
           </div>
           <div class="info-item">
@@ -1023,13 +786,19 @@
           </div>
           <div class="info-item">
             <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">가능 (건물 내 주차장 이용 및 발렛파킹 지원 · 노키즈존 운영)</div>
+            <div class="info-val">가능 (건물 내 주차장 및 매장 전용 발렛 파킹 지원 · 노키즈존 운영)</div>
           </div>
           <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
+            <span class="info-label">인기 메뉴 &amp; 가격대</span>
             <div class="info-val">
               <span class="price-highlight">돼지고기탕수육 33,000원 · 소고기탕수육(안심) 70,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 대가탕면 13,000원 · 해물짬뽕 13,000원 · 깐풍기/라조기 49,000원 · 난전완자/고추잡채 52,000원 · 멘보샤 小(8p) 39,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 대가탕면 13,000원 · 해물짬뽕 13,000원 · 깐풍기/라조기 49,000원 · 멘보샤 小(8p) 39,000원</span>
+            </div>
+            <div class="menu-chips">
+              <span class="chip">대가탕수육</span>
+              <span class="chip">대가탕면</span>
+              <span class="chip">해물짬뽕</span>
+              <span class="chip">게살볶음밥</span>
             </div>
           </div>
         </div>
@@ -1039,348 +808,339 @@
           <a class="btn" href="tel:0507-1467-6336">📞 전화 걸기</a>
         </div>
         <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 대장리 셰프의 시그니처 볶먹 스타일 탕수육 명가로, 브레이크 타임(15:00~17:00) 및 대기공간이 운영됩니다.</li>
-          <li><strong>리뷰 요약:</strong> 소스를 코팅하듯 볶아내어 시간이 지나도 투명하고 바삭한 식감을 유지하며, 굴 베이스의 칼칼한 '대가탕면'도 대표 메뉴로 꼽힙니다.</li>
+          <li><strong>주소 보정:</strong> 기존 `언주로148길 9`에서 현재 선정릉역 1번 출구 인근 <strong>봉은사로 333</strong>으로 이전해 운영 중이므로 네비 입력 시 현 주소를 이용하세요.</li>
+          <li><strong>방문 포인트 &amp; 리뷰:</strong> 소스를 부어 나오는데도 식사 끝까지 튀김옷이 눅눅해지지 않고 파삭하게 씹히는 독보적인 탕수육 식감과, 맑고 칼칼한 조개 베이스의 대가탕면 국물이 조화롭다는 평가를 받습니다.</li>
         </ul>
       </article>
 
-      <!-- 9. 주 (朱) -->
-      <article id="place-9" class="card" data-region="seoul" data-parking="no" data-search="주 朱 서울 서초구 동광로19길 16 방배동 내방역 02-3482-3374 주차 협소 33000 서울 3대 탕수육 주덕성">
+      <!-- 4. 동흥관 -->
+      <article id="place-4" class="card" data-cond="cond1" data-early="no" data-search="동흥관 서울 금천구 시흥대로63길 20 금천IC 02-803-3759 11:00 무료 주차 탕수육 딤섬 군만두 삼선간짜장 삼선짬뽕">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">04</span>
+            <h2>동흥관</h2>
+          </div>
+          <div class="badges">
+            <span class="badge cond1">조건1 · 수도권 아점</span>
+            <span class="badge">서울 금천</span>
+            <span class="badge time">⏰ 오픈 11:00</span>
+            <span class="badge park-ok">🅿️ 전용 지상 무료주차</span>
+          </div>
+        </div>
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>서울 금천구 시흥대로63길 20</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(서해안고속도로 금천IC 진입 직전 · 월~금 11:00~21:30 / 토·일 11:00~21:00)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val"><a class="tel-link" href="tel:02-803-3759">02-803-3759</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">가능 (매장 앞 전용 넓은 지상 주차장 무료 이용)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">인기 메뉴 &amp; 가격대</span>
+            <div class="info-val">
+              <span class="price-highlight">탕수육(중) 26,000원 · 꿔바로우(중) 28,000원 · 사천탕수육(중) 30,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장 8,000원 · 짬뽕/간짜장/볶음밥 9,000원 · 삼선간짜장 12,000원 · 활조개짬뽕 13,000원 · 수제군만두 8,500원</span>
+            </div>
+            <div class="menu-chips">
+              <span class="chip">탕수육</span>
+              <span class="chip">수제 딤섬·군만두</span>
+              <span class="chip">삼선간짜장</span>
+              <span class="chip">삼선짬뽕</span>
+            </div>
+          </div>
+        </div>
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/18525138" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="서울 금천구 시흥대로63길 20">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:02-803-3759">📞 전화 걸기</a>
+        </div>
+        <ul class="details">
+          <li><strong>방문 포인트 &amp; 리뷰:</strong> 서해안고속도로 금천IC 진입 바로 직전에 있어 하행 출발 동선으로 위치가 절묘합니다. 넓은 단독 주차장으로 주차가 쾌적하며, 70년 전통 노포답게 맑은 소스의 옛날식 탕수육과 수제 만두 맛이 안정적입니다.</li>
+        </ul>
+      </article>
+
+      <!-- 5. 락희안 목동직영점 -->
+      <article id="place-5" class="card" data-cond="cond1" data-early="no" data-search="락희안 목동직영점 서울 양천구 오목로 330 0507-1492-7579 02-2652-7576 11:30 주차 대파 꿔바로우 이가탕면 대만짜장 전복돌판누룽지탕">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">05</span>
+            <h2>락희안 <span class="subname">(목동직영점)</span></h2>
+          </div>
+          <div class="badges">
+            <span class="badge cond1">조건1 · 수도권 아점</span>
+            <span class="badge">서울 양천 목동</span>
+            <span class="badge time">⏰ 오픈 11:30</span>
+            <span class="badge park-ok">🅿️ 건물·기계식 주차</span>
+          </div>
+        </div>
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>서울 양천구 오목로 330 2, 3층</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(매주 월요일 정기휴무 참고)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val">
+              <a class="tel-link" href="tel:0507-1492-7579">0507-1492-7579</a>
+              <span style="color:var(--text-dim);font-size:0.82rem;">(유선 02-2652-7576)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">가능 (건물 지상 및 기계식 주차, 관리원 안내 · 구매 금액별 주차권 제공)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">인기 메뉴 &amp; 가격대</span>
+            <div class="info-val">
+              <span class="price-highlight">락희안 1945 대파꿔바로우(소) 30,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 락희안 옛날 짜장 8,000원 · 부추교자(4pcs) 11,000원 · 샤오마이(4pcs) 10,000원 · 전복돌판누룽지탕(소) 46,000원</span>
+            </div>
+            <div class="menu-chips">
+              <span class="chip">대파 꿔바로우</span>
+              <span class="chip">이가탕면</span>
+              <span class="chip">대만짜장 (흑미 생면)</span>
+              <span class="chip">전복돌판누룽지탕</span>
+            </div>
+          </div>
+        </div>
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/1538683609" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="서울 양천구 오목로 330">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:0507-1492-7579">📞 전화 걸기</a>
+        </div>
+        <ul class="details">
+          <li><strong>방문 포인트 &amp; 리뷰:</strong> 신선한 생대파를 수북이 얹어 느끼함을 잡은 대파 꿔바로우가 호평받습니다. 자극적이지 않고 속이 편안한 흑미 반죽 면발과 개운한 국물이 장거리 운전 전 식사로 적합하다는 평가입니다.</li>
+        </ul>
+      </article>
+
+      <!-- 6. 고등반점 -->
+      <article id="place-6" class="card is-corrected" data-cond="cond1" data-early="no" data-search="고등반점 경기 수원시 팔달구 팔달로52번길 43 팔달로 52 031-255-3291 11:00 대형 전용 지상 주차장 전통 탕수육 간짜장 삼선짬뽕 멘보샤">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">06</span>
+            <h2>고등반점</h2>
+          </div>
+          <div class="badges">
+            <span class="badge cond1">조건1 · 수도권 아점</span>
+            <span class="badge">경기 수원 팔달</span>
+            <span class="badge time">⏰ 오픈 11:00</span>
+            <span class="badge park-ok">🅿️ 단독 대형 지상주차</span>
+          </div>
+        </div>
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소 (상세 도로명 보정)</span>
+            <div class="info-val">
+              <span>경기 수원시 팔달구 팔달로52번길 43 고등반점</span>
+              <span style="color:var(--purple);font-size:0.84rem;">(네이버 플레이스 정식 도로명 · 평일 브레이크 타임 15:00~17:00 참고, 방문 전 유선 확인 권장)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val"><a class="tel-link" href="tel:031-255-3291">031-255-3291</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">가능 (식당 뒤편 단독 대형 전용 지상 주차장 완비)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">인기 메뉴 &amp; 가격대</span>
+            <div class="info-val">
+              <span class="price-highlight">탕수육(中) 22,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 7,000원 · 짬뽕 8,000원 · 간짜장 / 볶음밥 9,000원 · 유니짜장 / 삼선짜장 10,000원 · 삼선짬뽕 12,000원 · 군만두 8,000원</span>
+            </div>
+            <div class="menu-chips">
+              <span class="chip">전통 탕수육</span>
+              <span class="chip">간짜장</span>
+              <span class="chip">삼선짬뽕</span>
+              <span class="chip">멘보샤</span>
+            </div>
+          </div>
+        </div>
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/18149318" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="경기 수원시 팔달구 팔달로52번길 43">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:031-255-3291">📞 전화 걸기</a>
+        </div>
+        <ul class="details">
+          <li><strong>방문 포인트 &amp; 리뷰:</strong> 수원 도심에서 주차가 가장 편한 중식당 중 한 곳으로 손꼽힙니다. 기름기 없이 바삭하게 튀겨낸 탕수육과 불맛·양파 아삭함이 살아있는 정석 간짜장의 조화가 우수합니다.</li>
+        </ul>
+      </article>
+
+      <!-- 7. 영빈루 본점 -->
+      <article id="place-7" class="card is-corrected" data-cond="cond1" data-early="yes" data-search="영빈루 본점 경기 평택시 탄현로 341 송탄 031-668-8328 031-666-2558 10:00 고기 짬뽕 탕수육 야끼만두 짜장면">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">07</span>
+            <h2>영빈루 <span class="subname">(송탄 본점)</span></h2>
+          </div>
+          <div class="badges">
+            <span class="badge cond1">조건1 · 수도권 아점</span>
+            <span class="badge">경기 평택 송탄</span>
+            <span class="badge time">⏰ 오픈 10:00</span>
+            <span class="badge park-ok">🅿️ 주차 가능 (협소·주변 병행)</span>
+          </div>
+        </div>
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>경기 평택시 탄현로 341</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호 (플레이스 현행화)</span>
+            <div class="info-val">
+              <a class="tel-link" href="tel:031-668-8328">031-668-8328</a>
+              <span style="color:var(--text-dim);font-size:0.82rem;">(구 031-666-2558)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">가능 (네이버 플레이스 주차 등록 · 큰길가 특성상 협소할 수 있어 인근 공영주차장 병행 권장)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">인기 메뉴 &amp; 가격대</span>
+            <div class="info-val">
+              <span class="price-highlight">탕수육 소 13,000원 · 대 25,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 자장면 5,000원 · 짬뽕 8,000원 · 짬뽕밥 9,000원 · 만두 6,000원 · 삼선간자장 / 삼선짬뽕 15,000원</span>
+            </div>
+            <div class="menu-chips">
+              <span class="chip">고기 짬뽕</span>
+              <span class="chip">탕수육 (옛날식 튀김)</span>
+              <span class="chip">야끼만두</span>
+              <span class="chip">짜장면</span>
+            </div>
+          </div>
+        </div>
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/1791141920" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="경기 평택시 탄현로 341">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:031-668-8328">📞 전화 걸기</a>
+        </div>
+        <ul class="details">
+          <li><strong>방문 포인트 &amp; 리뷰:</strong> 오전 10시 오픈이라 하행선 이동 중 시간 맞추기 가장 좋습니다. 튀김옷이 뽀얗고 고소한 옛날식 탕수육과 채 썬 돼지고기를 듬뿍 넣은 묵직한 짬뽕 육수가 든든하다는 후기가 다수입니다.</li>
+        </ul>
+      </article>
+
+      <!-- 8. 지린성 -->
+      <article id="place-8" class="card" data-cond="cond2" data-early="yes" data-search="지린성 전북 군산시 미원로 87 063-467-2905 09:30 맞은편 공영주차장 무료 고추짜장 고추짬뽕 영광">
+        <div class="card-header">
+          <div class="title-group">
+            <span class="num">08</span>
+            <h2>지린성</h2>
+          </div>
+          <div class="badges">
+            <span class="badge cond2">조건2 · 중간 경유지</span>
+            <span class="badge">전북 군산</span>
+            <span class="badge time">⏰ 오픈 09:30</span>
+            <span class="badge park-pub">🅿️ 맞은편 공영주차장 무료</span>
+          </div>
+        </div>
+        <div class="info-grid">
+          <div class="info-item full">
+            <span class="info-label">실제 네비 주소</span>
+            <div class="info-val">
+              <span>전북특별자치도 군산시 미원로 87</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(매주 화요일 정기휴무 · 재료 소진 시 조기 마감, 주말 오후 3시 전 방문 권장)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">전화번호</span>
+            <div class="info-val"><a class="tel-link" href="tel:063-467-2905">063-467-2905</a></div>
+          </div>
+          <div class="info-item">
+            <span class="info-label">주차 가능 여부</span>
+            <div class="info-val">자체 주차장 없음 → 식당 바로 맞은편 대형 공영주차장 무료 이용 (주말 인근 학교 주차장 개방)</div>
+          </div>
+          <div class="info-item full">
+            <span class="info-label">인기 메뉴 &amp; 가격대</span>
+            <div class="info-val">
+              <span class="price-highlight">고추짜장(면/밥) 13,000원 · 고추짬뽕(면/밥) 13,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 9,000원 · 짜장밥 10,000원 · 일반 짬뽕/짬뽕밥 13,000원 (※ 플레이스 메뉴상 탕수육 미운영 · 식사류 전문)</span>
+            </div>
+            <div class="menu-chips">
+              <span class="chip">고추짜장</span>
+              <span class="chip">고추짬뽕</span>
+              <span class="chip">일반 짜장면</span>
+            </div>
+          </div>
+        </div>
+        <div class="action-bar">
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/17150328" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="전북특별자치도 군산시 미원로 87">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:063-467-2905">📞 전화 걸기</a>
+        </div>
+        <ul class="details">
+          <li><strong>동선 &amp; 리뷰:</strong> 오전 9시 30분 오픈으로 점심 1시 전 도착 방문에 최적이며 식사 후 영광까지 약 1시간 10분 소요됩니다. 청양고추의 알싸한 매운맛과 큼직한 고기가 어우러진 시그니처 고추짜장이 대표적입니다.</li>
+        </ul>
+      </article>
+
+      <!-- 9. 동해원 -->
+      <article id="place-9" class="card" data-cond="cond2" data-early="no" data-search="동해원 충남 공주시 납다리길 22 소학동 0507-1409-3624 041-852-3624 11:00 전용 주차장 짬뽕 짬뽕밥 짜장면 탕수육 영광">
         <div class="card-header">
           <div class="title-group">
             <span class="num">09</span>
-            <h2>주 <span class="subname">(朱)</span></h2>
+            <h2>동해원</h2>
           </div>
           <div class="badges">
-            <span class="badge tag-gold">서울 3대 탕수육</span>
-            <span class="badge">서울 서초</span>
-            <span class="badge park-no">🅿️ 주차 매우 협소</span>
+            <span class="badge cond2">조건2 · 중간 경유지</span>
+            <span class="badge">충남 공주</span>
+            <span class="badge time">⏰ 11:00~15:00 한정</span>
+            <span class="badge park-ok">🅿️ 단독 전용 주차장</span>
           </div>
         </div>
         <div class="info-grid">
           <div class="info-item full">
             <span class="info-label">실제 네비 주소</span>
             <div class="info-val">
-              <span>서울 서초구 동광로19길 16 복합빌딩</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(방배동 · 내방역 6번 출구 인근 · 평일 브레이크 타임 15:00~17:00, 월요일 휴무 참고)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:02-3482-3374">02-3482-3374</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">매우 협소 (매장 앞 1~2대만 가능해 사실상 주차 어려움 · 인근 유료 주차장 이용 권장)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">탕수육 33,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 약 9,000원선 · 삼선짬뽕 약 12,000원선 · 유린기 약 34,000~38,000원선 (방문 시점별 변동 가능)</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/13371755" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="서울 서초구 동광로19길 16">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:02-3482-3374">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 조선호텔 중식당 출신 주덕성 셰프가 운영하는 서울 3대 탕수육 명가입니다.</li>
-          <li><strong>리뷰 요약:</strong> 두툼한 고기 육즙과 폭신하면서도 바삭한 특유의 튀김옷이 압권이라는 평가를 받습니다.</li>
-        </ul>
-      </article>
-
-      <!-- 10. 명화원 -->
-      <article id="place-10" class="card" data-region="seoul" data-parking="no" data-search="명화원 서울 용산구 한강대로 202 삼각지 02-792-2969 주차불가 전쟁기념관 20000 30000 자장면 7000 짬뽕 8000 서울 3대 탕수육">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">10</span>
-            <h2>명화원</h2>
-          </div>
-          <div class="badges">
-            <span class="badge tag-gold">서울 3대 탕수육</span>
-            <span class="badge">서울 용산</span>
-            <span class="badge park-no">🅿️ 주차 불가</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소</span>
-            <div class="info-val">
-              <span>서울 용산구 한강대로 202</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(한강로1가 14-28 · 삼각지역 11번 출구 직진 20m · 화~토 점심 11:00~15:00 위주, 일·월 휴무)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:02-792-2969">02-792-2969</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">주차 불가 (전용 주차장 없음 · 인근 전쟁기념관 유료 주차장 등 이용)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">탕수육 中 20,000원 · 탕수육 大 30,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 자장면 7,000원 · 짬뽕 8,000원 · 군만두 8,000원 · 물만두 8,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/11679883" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="서울 용산구 한강대로 202">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:02-792-2969">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 수십 년 전통의 노포 중식당으로 예약 앱 없이 현장 대기로 운영되며, 점심 시간대 재료 소진 시 조기 마감될 수 있습니다.</li>
-          <li><strong>리뷰 요약:</strong> 쫀득한 찹쌀 튀김옷과 새콤달콤한 투명 소스가 어우러지는 부먹 스타일 탕수육의 정석으로 꼽힙니다.</li>
-        </ul>
-      </article>
-
-      <!-- 11. 도원 (구 더 플라자 -> 광화문 도원S 이전) -->
-      <article id="place-11" class="card is-moved" data-region="seoul" data-parking="yes" data-search="도원 도원S 더플라자 호텔 소공동 광화문 세종대로 178 KT광화문빌딩 02-720-5883 주차가능 항정살 탕수육 이전">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">11</span>
-            <h2>도원·S <span class="subname">(구 더 플라자 호텔 도원 · 광화문 이전)</span></h2>
-          </div>
-          <div class="badges">
-            <span class="badge moved">🔄 소공동 휴업 · 광화문 이전</span>
-            <span class="badge">서울 종로</span>
-            <span class="badge park-ok">🅿️ 주차 가능</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소 (이전 후 현 매장)</span>
-            <div class="info-val">
-              <span>서울 종로구 세종대로 178 KT광화문빌딩 WEST, 15층</span>
-              <span style="color:var(--purple);font-size:0.84rem;">(소공동 더 플라자 호텔은 2026.09.30 리모델링 영업 종료 → 광화문 '도원·S'로 이전 운영 중)</span>
+              <span>충청남도 공주시 납다리길 22</span>
+              <span style="color:var(--text-dim);font-size:0.84rem;">(소학동 194-1 · 11:00~15:00 딱 4시간만 영업)</span>
             </div>
           </div>
           <div class="info-item">
             <span class="info-label">전화번호</span>
             <div class="info-val">
-              <a class="tel-link" href="tel:02-720-5883">02-720-5883</a>
-              <span style="color:var(--text-dim);font-size:0.82rem;">(구 소공동 02-310-7300)</span>
+              <a class="tel-link" href="tel:0507-1409-3624">0507-1409-3624</a>
+              <span style="color:var(--text-dim);font-size:0.82rem;">(유선 041-852-3624)</span>
             </div>
           </div>
           <div class="info-item">
             <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">가능 (KT광화문빌딩 내 주차 가능 · 파인다이닝 이용 시 주차 지원, 예약 시 확인 권장)</div>
+            <div class="info-val">가능 (매장 단독 전용 주차장 완비)</div>
           </div>
           <div class="info-item full">
-            <span class="info-label">코스 &amp; 단품 가격대</span>
+            <span class="info-label">인기 메뉴 &amp; 가격대</span>
             <div class="info-val">
-              <span class="price-highlight">비취코스 140,000원 ~ 무릉도원 500,000원 (금옥 16만·만당 18만·귀빈 22만·천고마비 32만)</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 모둠 딤섬 40,000원 · 북경오리 200,000원 · 원충 불도장/붉바리 어간장 찜 300,000원 (※ 광화문 도원S는 코스·해산물 파인다이닝 중심이므로 기존 단품 탕수육 주문 가능 여부는 사전 전화 확인 권장)</span>
+              <span class="price-highlight">탕수육 소 17,000원 · 중 28,000원</span>
+              <span style="color:var(--text-muted);font-size:0.86rem;">| 짬뽕 / 짬뽕밥 11,000원 (곱배기 13,000원) · 짜장면 8,000원 (곱배기 9,000원) · 짜장밥 9,000원</span>
+            </div>
+            <div class="menu-chips">
+              <span class="chip">짬뽕</span>
+              <span class="chip">짬뽕밥</span>
+              <span class="chip">짜장면</span>
+              <span class="chip">탕수육</span>
             </div>
           </div>
         </div>
         <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/2077704429" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 (도원S) ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="서울 종로구 세종대로 178">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:02-720-5883">📞 전화 걸기</a>
+          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/21037635" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
+          <button class="btn copy-btn" type="button" data-copy="충청남도 공주시 납다리길 22">📋 네비 주소 복사</button>
+          <a class="btn" href="tel:0507-1409-3624">📞 전화 걸기</a>
         </div>
         <ul class="details">
-          <li><strong>이전 안내 (2026년 최신 확인):</strong> 더 플라자 호텔 본관이 2026년 9월 30일 자로 리노베이션(2029년 재개관 목표)에 돌입하면서, 중식당 도원은 광화문 KT웨스트 15층 <strong>'도원·S(TAOYUEN·S)'</strong>로 계승·운영되고 있습니다.</li>
-          <li><strong>특징 요약:</strong> 기존 더 플라자 시절 항정살을 사용해 촉촉한 육즙과 부드러운 식감을 극대화한 광동식 프리미엄 탕수육으로 명성을 쌓은 호텔 중식 명가입니다.</li>
-        </ul>
-      </article>
-
-      <!-- 12. 일일향 압구정본점 -->
-      <article id="place-12" class="card" data-region="seoul" data-parking="yes" data-search="일일향 압구정본점 서울 강남구 도산대로35길 39 0507-1347-6154 주차 발렛파킹 육즙탕수육 38000 삼선간짜장 12000 불맛짬뽕 11000">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">12</span>
-            <h2>일일향 <span class="subname">압구정본점</span></h2>
-          </div>
-          <div class="badges">
-            <span class="badge tag-gold">육즙 탕수육</span>
-            <span class="badge">서울 강남</span>
-            <span class="badge park-ok">🅿️ 주차 · 발렛 가능</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소</span>
-            <div class="info-val">
-              <span>서울 강남구 도산대로35길 39 1, 2층</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(압구정역 3번 출구 도보 약 6분 · 압구정 CGV 골목 직진 100m 좌측)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:0507-1347-6154">0507-1347-6154</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">가능 (주차 및 발렛파킹 지원 · 발렛비 5,000원 참고)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">원조 육즙탕수육 38,000원 · 탕수육+칠리새우 정식 23,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 불맛짬뽕 11,000원 · 삼선간짜장 12,000원 · 우육탕면/냉이짬뽕 14,000원 · 잡채볶음밥+후라이 15,000원 · 시그니처 어향동고 48,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/11707317" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="서울 강남구 도산대로35길 39">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:0507-1347-6154">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 압구정 본점 외 직영점 다수를 운영 중인 브랜드의 본점(이전 리뉴얼 매장)입니다.</li>
-          <li><strong>리뷰 요약:</strong> 손가락 굵기 이상의 통 돼지고기를 얇은 튀김옷으로 감싼 '육즙 돼지고기 탕수육' 열풍을 이끈 곳으로 잘 알려져 있습니다.</li>
-        </ul>
-      </article>
-
-      <!-- 13. 친니 -->
-      <article id="place-13" class="card" data-region="seoul" data-parking="yes" data-search="친니 서울 종로구 세종대로 175 세종문화회관 광화문 02-733-3270 주차 할인권 35000 친니짜장 11000 굴탕면 17000 몽솜 목화솜">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">13</span>
-            <h2>친니</h2>
-          </div>
-          <div class="badges">
-            <span class="badge tag-gold">광화문 명소</span>
-            <span class="badge">서울 종로</span>
-            <span class="badge park-ok">🅿️ 주차 가능 (할인권)</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소</span>
-            <div class="info-val">
-              <span>서울 종로구 세종대로 175 세종문화회관 지하 1층</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(광화문역 1·8번 출구 인근 · 광화문아띠 내 정상 영업 중)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:02-733-3270">02-733-3270</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">가능 (식사 고객 대상 세종로 공영주차장 2시간 할인권 제공)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">탕수육 35,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 친니짜장 11,000원 · 굴탕면 17,000원 · 굴짬뽕 18,000원 · 차돌숙주짬뽕 23,000원 · 동파육 60,000원 · 코스 45,000~95,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/36523570" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="서울 종로구 세종대로 175">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:02-733-3270">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 세종문화회관 지하(광화문아띠)에서 정상 영업 중이며, 단체 이용 및 예약이 가능합니다.</li>
-          <li><strong>리뷰 요약:</strong> 둥글둥글한 모양의 몽솜(목화솜) 탕수육 스타일을 선보이며 쫄깃한 식감과 깔끔한 단맛의 소스가 돋보인다는 평을 받습니다.</li>
-        </ul>
-      </article>
-
-      <!-- 14. 진태원 -->
-      <article id="place-14" class="card" data-region="etc" data-parking="no" data-search="진태원 강원 평창군 대관령면 횡계길 19 033-335-5567 공용주차장 32000 40000 짜장 7000 짬뽕 8000 부추 배추">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">14</span>
-            <h2>진태원</h2>
-          </div>
-          <div class="badges">
-            <span class="badge tag-gold">전국 명가 (강원)</span>
-            <span class="badge">강원 평창</span>
-            <span class="badge park-no">🅿️ 전용 없음 (옆 무료공영)</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소</span>
-            <div class="info-val">
-              <span>강원 평창군 대관령면 횡계길 19</span>
-              <span style="color:var(--text-dim);font-size:0.84rem;">(횡계리 325-18 · 낮 시간대 11:00~16:00 위주, 재료 소진 시 조기 마감·현장 대기)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:033-335-5567">033-335-5567</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">전용 주차장 없음 (매장 앞 도로 단속·협소 → 옆 무료 공용주차장 도보 이용)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">탕수육 중 32,000원 · 탕수육 대 40,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장 7,000원 (곱배기 8,000원) · 짬뽕 8,000원 (곱배기 9,000원) · 군만두 7,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/11845634" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="강원 평창군 대관령면 횡계길 19">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:033-335-5567">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>분위기 및 특징:</strong> 테이블 수가 적은 소규모 매장으로 예약 앱 없이 현장 줄서기 위주로 운영되며 웨이팅이 잦습니다.</li>
-          <li><strong>리뷰 요약:</strong> 바삭하게 튀긴 탕수육 위에 아삭한 부추와 배추를 듬뿍 얹어 기름진 맛을 잡아주는 전국구 인기 맛집입니다.</li>
-        </ul>
-      </article>
-
-      <!-- 15. 금문도 -->
-      <article id="place-15" class="card is-moved" data-region="incheon" data-parking="yes" data-search="금문도 인천 강화군 길상면 강화동로 187 강화읍 이전 0507-1477-0833 주차가능 1500평 무료 순무 탕수육 25000 속노랑간짜장 12000">
-        <div class="card-header">
-          <div class="title-group">
-            <span class="num">15</span>
-            <h2>금문도 <span class="subname">(강화읍 → 길상면 이전)</span></h2>
-          </div>
-          <div class="badges">
-            <span class="badge moved">🔄 주소 이전 확인</span>
-            <span class="badge tag-gold">전국 명가 (강화)</span>
-            <span class="badge">인천 강화</span>
-            <span class="badge park-ok">🅿️ 1,500평 무료 주차</span>
-          </div>
-        </div>
-        <div class="info-grid">
-          <div class="info-item full">
-            <span class="info-label">실제 네비 주소 (이전 후 현 매장)</span>
-            <div class="info-val">
-              <span>인천 강화군 길상면 강화동로 187 금문도</span>
-              <span style="color:var(--purple);font-size:0.84rem;">(구 강화읍 버스터미널에서 길상면 강화요양병원 바로 옆으로 확장 이전 · 월요일 휴무, 10:00~14:30 참고)</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전화번호</span>
-            <div class="info-val"><a class="tel-link" href="tel:0507-1477-0833">0507-1477-0833</a></div>
-          </div>
-          <div class="info-item">
-            <span class="info-label">주차 가능 여부</span>
-            <div class="info-val">가능 (가게 뒤쪽 1,500평 부지 전용 주차장 무료 이용 가능)</div>
-          </div>
-          <div class="info-item full">
-            <span class="info-label">탕수육 &amp; 기본 메뉴 가격</span>
-            <div class="info-val">
-              <span class="price-highlight">강화 순무 탕수육 25,000원</span>
-              <span style="color:var(--text-muted);font-size:0.86rem;">| 짜장면 7,000원 · 강화속노랑간짜장 12,000원 · 강화섬쌀 볶음밥 12,000원 · 강화백짬뽕 / 강화삼선짬뽕 13,000원</span>
-            </div>
-          </div>
-        </div>
-        <div class="action-bar">
-          <a class="btn btn-naver" href="https://map.naver.com/p/entry/place/19714755" target="_blank" rel="noopener noreferrer">📍 네이버 플레이스 가게 페이지 ↗</a>
-          <button class="btn copy-btn" type="button" data-copy="인천 강화군 길상면 강화동로 187">📋 네비 주소 복사</button>
-          <a class="btn" href="tel:0507-1477-0833">📞 전화 걸기</a>
-        </div>
-        <ul class="details">
-          <li><strong>이전 유의:</strong> 기존 강화읍(강화버스터미널)에서 <strong>길상면 강화동로 187</strong>로 확장 이전했으므로 네비 입력 시 반드시 길상면 주소를 확인하세요.</li>
-          <li><strong>리뷰 요약:</strong> 강화 특산물인 순무를 수북하게 쌓아 올려 소스와 함께 곁들여 먹는 이색적인 '순무 탕수육'과 속노랑간짜장·백짬뽕이 대표 메뉴입니다.</li>
+          <li><strong>동선 &amp; 리뷰:</strong> 11:00~15:00 하루 4시간만 영업하는 전국구 짬뽕 노포입니다. 가늘게 채 썬 돼지고기와 오징어, 채소가 푹 끓여져 나오는 진하고 구수한 국물이 일품이며, 천안논산고속도로 이용 시 들르기 좋고 식사 후 영광까지 약 1시간 40분 소요됩니다.</li>
         </ul>
       </article>
     </main>
@@ -1390,8 +1150,8 @@
     </div>
 
     <footer>
-      실제 네이버 플레이스 ID 검증 및 메뉴·주차·이전·폐업 정보 반영 (총 15곳) · dk-public-projects/s<br>
-      ※ 가격·영업시간·주차 기준은 방문 시점 및 매장 사정에 따라 변경될 수 있으니 방문 전 플레이스 페이지 또는 유선 확인을 권장합니다.
+      실제 네이버 플레이스 ID 검증·실주소/번호 현행화 및 메뉴·주차 정보 반영 (9곳) · dk-public-projects/s<br>
+      ※ 영업시간·휴무일·가격 기준은 방문 시점 및 재료 소진 여부에 따라 변동될 수 있으니 출발 전 플레이스 또는 유선 확인을 권장합니다.
     </footer>
   </div>
 
@@ -1412,10 +1172,10 @@
 
       cards.forEach((card) => {
         let filterMatch = true;
-        if (activeFilter === 'park-ok') {
-          filterMatch = card.dataset.parking === 'yes';
-        } else if (activeFilter !== 'all') {
-          filterMatch = card.dataset.region === activeFilter;
+        if (activeFilter === 'cond1' || activeFilter === 'cond2') {
+          filterMatch = card.dataset.cond === activeFilter;
+        } else if (activeFilter === 'early') {
+          filterMatch = card.dataset.early === 'yes';
         }
         const text = (card.dataset.search + ' ' + card.textContent).toLowerCase();
         const queryMatch = !q || text.includes(q);
